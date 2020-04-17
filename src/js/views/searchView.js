@@ -19,5 +19,19 @@ export const highlightSelected  = id => {
 };
 
 const renderCrop = crop => {
-    const markup = ``
+    const markup = `
+    <li>
+        <a class="results__link results__link--active" href="#${crop.id}">
+            <div class="results__data">
+                <h3 class="results__name">${crop.common_name}</h3>
+                <h4 class="results__name">${crop.scientific_name}</h4>
+            </div>
+        </a>
+    </li>`;
+    elements.searchResList.insertAdjacentHTML('beforeend', markup);
+}
+
+export const renderResults = crops => {
+    console.log(crops)
+    crops.forEach(renderCrop)
 }
