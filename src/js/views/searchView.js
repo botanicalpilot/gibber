@@ -1,9 +1,10 @@
 import { elements } from './base';
 
-export const getInput = () => {
+export const getInput = () =>
+    elements.searchInput.value;
+export const clearInput = () => {
     elements.searchInput.value = ''
 };
-
 export const clearResults = () => {
     elements.searchResList.innerHTML = '';
     elements.searchResPages.innerHTML = '';
@@ -16,3 +17,7 @@ export const highlightSelected  = id => {
     });
     document.querySelector(`.results__link[href*=${id}"]`).classList.add('results__link--active');
 };
+
+const renderCrop = crop => {
+    const markup = ``
+}

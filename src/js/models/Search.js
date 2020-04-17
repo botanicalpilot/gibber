@@ -8,10 +8,8 @@ export default class Search {
     async getResults(query) {
         const proxy = 'https://cors-anywhere.herokuapp.com/';
         try{
-            const res = await axios.get(`${proxy}https://thallus-api.herokuapp.com/api/crops/`);
+            const res = await axios.get(`${proxy}https://thallus-api.herokuapp.com/api/crops?common_name=${query}`);
             this.result = res.data;
-            console.log(this.result)
-            
         } catch (error) {
             console.log(error)
             alert(error) 

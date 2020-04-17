@@ -170,6 +170,14 @@
     .search:focus-within {
       transform: translateY(-2px);
       box-shadow: 0 0.7rem 3rem rgba(101, 90, 86, 0.08); }
+    .search__options {
+      border: none;
+      background: none;
+      font-family: inherit;
+      color: inherit;
+      font-size: 1.7rem;
+      width: 15rem; 
+    }
     .search__field {
       border: none;
       background: none;
