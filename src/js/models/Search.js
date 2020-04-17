@@ -5,17 +5,16 @@ export default class Search {
     //     this.query = query;
     // }
 
-    async getResults() {
+    async getResults(query) {
+        const proxy = 'https://cors-anywhere.herokuapp.com/';
         try{
-            console.log("hello")
-            const res = await axios.get(`https://thallus-api.herokuapp.com/api/crops/`);
-            this.result = res.data.crops;
+            const res = await axios.get(`${proxy}https://thallus-api.herokuapp.com/api/crops/`);
+            this.result = res.data;
             console.log(this.result)
             
         } catch (error) {
             console.log(error)
-            alert(error)
-            
+            alert(error) 
         }
     }
 }
