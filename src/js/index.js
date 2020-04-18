@@ -15,13 +15,18 @@ const state = {};
 // */
 const controlSearch = async () => {
     const query = searchView.getInput();
-    console.log(query)
     if (query) {
         state.search = new Search();
-        await state.search.getResults(query);
-        searchView.renderResults(state.search.result);
+        searchView.clearInput();
+        searchView.clearResults();
+        try{
+            await state.search.getResults(query);
+            searchView.renderResults(state.search.result);
+        } catch(error) {
+            console.log(error)
+            alert(`Something went wrong with your search. See error in console.`)
+        }
     }
-    
 }
 
 

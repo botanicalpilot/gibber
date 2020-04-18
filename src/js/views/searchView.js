@@ -7,7 +7,6 @@ export const clearInput = () => {
 };
 export const clearResults = () => {
     elements.searchResList.innerHTML = '';
-    elements.searchResPages.innerHTML = '';
 };
 
 export const highlightSelected  = id => {
