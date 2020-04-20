@@ -23,6 +23,7 @@ const controlSearch = async () => {
         try{
             await state.search.getResults(param, query);
             searchView.renderResults(state.search.result);
+            searchView.buildAccordion(state.search.result)
         } catch(error) {
             console.log(error)
             alert(`Something went wrong with your search. See error in console.`)

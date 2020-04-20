@@ -30,25 +30,35 @@
                     <div class="results">
                         <div class=results__container>
                         <ul class="results__list">
-                            <li>
+                            <!-- <li>
                                 <a class="results__link results__link--active" href="#23456">
-                                    <!-- <figure class="results__fig">
-                                        <img src="img/test-1.jpg" alt="Test">
-                                    </figure> -->
                                     <button class="results__data">
-                                        <h3 class="results__name">Tomato</h3>
+                                        ${crop.common_name}/
+                                        ${crop.scientific_name}
                                     </button>
                                     <div class="results__panel">
-                                        <div class="results_boolean"></div>
+                                        <div class="results_boolean">${crop.sow_all_season}</div>
+                                        <div class="results_boolean">${crop.start_all_season}</div>
                                         <div class="results__dates">
-                                            <div class="sow_indoor">date</div>
-                                            <div class="sow_outdoor">date</div>
-                                            <div class="start_outdoor">date</div>
+                                            <div class="sow_indoor">
+                                                <p>Sow Indoor Start: ${crop.sow_indoor_start}</p>
+                                                <p>end: Sow Indoor End: ${crop.sow_indoor_end}</p>
+                                                <button>add</button>
+                                            </div>
+                                            <div class="sow_outdoor">
+                                                <p>Sow Outdoor Start: ${crop.sow_outdoor_start}</p>
+                                                <p>Sow Outdoor End: ${crop.sow_outdoor_end}</p>
+                                                <button>add</button>
+                                            </div>
+                                            <div class="start_outdoor">
+                                            <p>Plant Starts Outdoor: ${crop.start_outdoor_start}</p>
+                                            <p>Plant Starts Outdoor End: ${crop.start_outdoor_end}</p>
+                                            <button>add</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </a>
-                            </li>
-                            
+                            </li> -->
                         </ul>
                     </div>
             
