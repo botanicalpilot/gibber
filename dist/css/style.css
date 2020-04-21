@@ -157,6 +157,10 @@ ul {
   flex-direction: row;
 }
 
+/* loading display */
+.loader {
+  margin: 5rem auto;
+  text-align: center; }
 
 
 /* results styling */
