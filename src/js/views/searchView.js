@@ -19,16 +19,27 @@ export const highlightSelected  = id => {
 };
 
 const renderCrop = crop => {
+    // let users know planting intervals. 
+    let cropBoolean = ''
+    if(crop.sow_all_season && crop.start_all_season === true){
+       cropBoolean =  `<div class="results_boolean">Plant Crop in intervals all season from either starts or seeds.</div>` 
+    } else if(crop.sow_all_season === true && crop.start_all_season === false){ cropBoolean = `<div class="results_boolean">Crops may be sown in intervals throughout the growing season.</div>`
+    } else {
+        cropBoolean = `<div class="results__boolean">Crops may only be planted between the dates below.</div>`
+    }
+
+    // reformat dates from API
+    // console.log(new Date(crop.sow_outdoor_start))
+
     const markup = `
     <li>
     <a class="results__link results__link--active" href="#23456">
         <button class="results__data">
-            ${crop.common_name}/
+            ${crop.common_name}<br>
             ${crop.scientific_name}
         </button>
         <div class="results__panel">
-            <div class="results_boolean">${crop.sow_all_season}</div>
-            <div class="results_boolean">${crop.start_all_season}</div>
+            ${cropBoolean} 
             <div class="results__dates">
                 <div class="sow_indoor">
                     <p>Sow Indoor Start: ${crop.sow_indoor_start}</p>
