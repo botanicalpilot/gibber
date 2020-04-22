@@ -152,8 +152,6 @@ a{
 .search__field::placeholder {
       color: #DAD0CC; }
 
-
-
 /* content styling */
 .content{
   flex: 3;
@@ -180,7 +178,12 @@ a{
   text-align: center;
 }
 .active, .results__data:hover {
-  background-color: #8C5E51;
+  background-image: linear-gradient(to right bottom, #8C5E51, #402118);
+  color: white;
+}
+
+#cn_style{
+  text-transform: capitalize;
 }
 
 #sn_style{

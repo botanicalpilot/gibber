@@ -57,7 +57,7 @@ const renderCrop = crop => {
     <li>
     <a class="results__link results__link--active" href="#23456">
         <button class="results__data">
-            ${crop.common_name}<br>
+            <div id="cn_style">${crop.common_name}</div><br>
             <div id="sn_style">${crop.scientific_name}</div>
         </button>
         <div class="results__panel">

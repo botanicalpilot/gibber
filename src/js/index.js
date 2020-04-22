@@ -14,7 +14,6 @@ const state = {};
 // Search Controller for crops
 // */
 const controlSearch = async () => {
-    const param = searchView.getParam();
     const query = searchView.getInput();
     if (query) {
         state.search = new Search();
@@ -22,7 +21,7 @@ const controlSearch = async () => {
         searchView.clearResults();
         renderLoader(elements.searchRes)
         try{
-            await state.search.getResults(param, query);
+            await state.search.getResults(query);
             clearLoader();
             searchView.renderResults(state.search.result);
             
