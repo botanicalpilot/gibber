@@ -38,12 +38,16 @@ a{
 .header{
   flex: 1;
   width: 100vw;
+  height: 25vh;
   display: flex;
   height: 4.5 rem;
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(to right bottom, #518C7A, #1F4036);
-  
+}
+
+#headerLogo{
+  height: 25vh;
 }
 
 
