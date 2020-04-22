@@ -18,6 +18,25 @@ export const highlightSelected  = id => {
     document.querySelector(`.results__link[href*=${id}"]`).classList.add('results__link--active');
 };
 
+
+const buildAccordion = () => {
+    const accordionBtn = document.querySelector('.results__data');
+    
+        accordionBtn.addEventListener("click",function() {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+          this.classList.toggle("active");
+        
+            /* Toggle between hiding and showing the active panel */
+          let panel = document.querySelector('.results__panel');
+            if (panel.style.display === "block"){
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+}
+
 const renderCrop = crop => {
     // let users know planting intervals. 
     let cropBoolean = ''
@@ -36,7 +55,7 @@ const renderCrop = crop => {
     <a class="results__link results__link--active" href="#23456">
         <button class="results__data">
             ${crop.common_name}<br>
-            ${crop.scientific_name}
+            <div id="sn_style">${crop.scientific_name}</div>
         </button>
         <div class="results__panel">
             ${cropBoolean} 
@@ -60,28 +79,15 @@ const renderCrop = crop => {
         </div>
     </a>
 </li>`;
-    elements.searchResList.insertAdjacentHTML('beforeend', markup);
+
+elements.searchResList.insertAdjacentHTML('beforeend', markup);
+
 }
 
-export const buildAccordion = () => {
-    let accordionBtn = document.querySelector('.results__data')
-    accordionBtn.addEventListener("click", function() {
-          /* Toggle between adding and removing the "active" class,
-          to highlight the button that controls the panel */
-        this.classList.toggle("active");
-      
-          /* Toggle between hiding and showing the active panel */
-        let panel = this.nextElementSibling;
-          if (panel.style.display === "block") {
-            panel.style.display = "none";
-          } else {
-            panel.style.display = "block";
-          }
-        });
-}
 
 
 export const renderResults = crops => {
     console.log(crops)
     crops.forEach(renderCrop)
+    buildAccordion(); 
 }

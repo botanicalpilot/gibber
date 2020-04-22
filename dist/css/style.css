@@ -159,6 +159,7 @@ a{
   flex: 3;
   display: flex;
   flex-direction: row;
+  overflow-y: scroll;
 }
 
 /* loading display */
@@ -170,7 +171,6 @@ a{
 /* results styling */
 .results{
   flex:1;
-  overflow-y: scroll;
 }
 .results__data{
   width: 100%;
@@ -181,6 +181,10 @@ a{
 }
 .active, .results__data:hover {
   background-color: #8C5E51;
+}
+
+#sn_style{
+  font-style: italic;
 }
 
 .results__panel{
