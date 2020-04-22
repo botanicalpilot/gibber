@@ -36,9 +36,11 @@ a{
 
 /* header styling */
 .header{
-  flex: 1;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
-  height: 25vh;
+  height: 30vh;
   display: flex;
   height: 4.5 rem;
   justify-content: center;
@@ -46,8 +48,28 @@ a{
   background-image: linear-gradient(to right bottom, #518C7A, #1F4036);
 }
 
+.headerTitle{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.headerTitle h1{
+  flex:1;
+  color: white;
+  font-family: 'BioRhyme', serif;
+
+}
+
+
 #headerLogo{
-  height: 25vh;
+  flex: 1;
+  height:15vh;
+}
+
+.headerForm {
+  flex: 1;
 }
 
 
