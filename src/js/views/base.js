@@ -4,7 +4,7 @@ export const elements = {
     searchRes: document.querySelector('.results'),
     searchResList: document.querySelector('.results__list'),
     searchParam: document.querySelector('.search__options'),
-    
+    accordionBtn: document.getElementsByClassName('results__data')
 }
 
 export const elementStrings = {

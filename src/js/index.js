@@ -25,7 +25,7 @@ const controlSearch = async () => {
             await state.search.getResults(param, query);
             clearLoader();
             searchView.renderResults(state.search.result);
-           
+            
         } catch(error) {
             console.log(error)
             alert(`Something went wrong with your search. See error in console.`)

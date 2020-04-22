@@ -19,22 +19,25 @@ export const highlightSelected  = id => {
 };
 
 
-const buildAccordion = () => {
-    const accordionBtn = document.querySelector('.results__data');
+export const buildAccordion = () => {
+    // const accordionBtn = document.getElementsByClassName('results__data');
+    let i;
     
-        accordionBtn.addEventListener("click",function() {
+    for(i = 0; i < elements.accordionBtn.length; i++){
+        elements.accordionBtn[i].addEventListener("click",function() {
             /* Toggle between adding and removing the "active" class,
             to highlight the button that controls the panel */
           this.classList.toggle("active");
         
             /* Toggle between hiding and showing the active panel */
-          let panel = document.querySelector('.results__panel');
+          let panel = this.nextElementSibling;
             if (panel.style.display === "block"){
               panel.style.display = "none";
             } else {
               panel.style.display = "block";
             }
           });
+    }     
 }
 
 const renderCrop = crop => {
@@ -89,5 +92,6 @@ elements.searchResList.insertAdjacentHTML('beforeend', markup);
 export const renderResults = crops => {
     console.log(crops)
     crops.forEach(renderCrop)
-    buildAccordion(); 
+    buildAccordion()
+    
 }
