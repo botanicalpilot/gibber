@@ -27,7 +27,7 @@ a{
   width: 100vw;
   height: 100vh;
   justify-content: center;
-  overflow: hidden;
+  overflow-y: auto;
   background-color: #fff;
   border-radius: 6px;
   margin: 4vw auto;
@@ -242,3 +242,7 @@ a{
 .selection{
   flex: 1
 }
+
+/* .calendarContainer {
+  flex: 1;
+} */

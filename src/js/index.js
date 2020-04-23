@@ -1,6 +1,9 @@
 import Search from './models/Search';
 import * as searchView from './views/searchView';
 import { elements, renderLoader, clearLoader } from './views/base';
+import Calendar from 'tui-calendar';
+import "tui-calendar/dist/tui-calendar.css";
+
 // import axios from 'axios';
 
 // Set state of the app which will include the state for
@@ -37,3 +40,14 @@ elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
 });
+
+// const calendar = new Calendar('#calendar', {
+//     defaultView: 'month',
+//     taskView: true,
+//     template: {
+//         monthDayname: function(dayname) {
+//             return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
+//         }
+//     }
+// });
+
