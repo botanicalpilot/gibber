@@ -69,13 +69,13 @@ const renderCrop = crop => {
                     <button>add</button>
                 </div>
                 <div class="sow_outdoor">
-                    <p>Sow Outdoor Start: ${crop.sow_outdoor_start}</p>
+                    <p>Sow Outdoor Start:<br> ${crop.sow_outdoor_start}</p>
                     <p>Sow Outdoor End: ${crop.sow_outdoor_end}</p>
                     <button>add</button>
                 </div>
                 <div class="start_outdoor">
-                <p>Plant Starts Outdoor: ${crop.start_outdoor_start}</p>
-                <p>Plant Starts Outdoor End: ${crop.start_outdoor_end}</p>
+                    <p>Plant Starts Outdoor: ${crop.start_outdoor_start}</p>
+                    <p>Plant Starts Outdoor End: ${crop.start_outdoor_end}
                 <button>add</button>
                 </div>
             </div>
