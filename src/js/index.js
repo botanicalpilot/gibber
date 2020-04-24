@@ -3,6 +3,9 @@ import * as searchView from './views/searchView';
 import { elements, renderLoader, clearLoader } from './views/base';
 import Calendar from 'tui-calendar';
 import "tui-calendar/dist/tui-calendar.css";
+import 'tui-date-picker/dist/tui-date-picker.css';
+import 'tui-time-picker/dist/tui-time-picker.css';
+
 
 // import axios from 'axios';
 
@@ -41,13 +44,16 @@ elements.searchForm.addEventListener('submit', e => {
     controlSearch();
 });
 
-// const calendar = new Calendar('#calendar', {
-//     defaultView: 'month',
-//     taskView: true,
-//     template: {
-//         monthDayname: function(dayname) {
-//             return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
-//         }
-//     }
-// });
+var calendar = new Calendar('#calendar', {
+    defaultView: 'month',
+    taskView: false,
+    template: {
+        monthDayname: function(dayname) {
+            return `<span class="calendar-week-dayname-name">${dayname.label}</span>`;
+        }
+    }
+});
+
+
+  
 

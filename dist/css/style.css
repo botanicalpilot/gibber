@@ -25,31 +25,30 @@ a{
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   justify-content: center;
-  overflow-y: auto;
+  overflow-y: scroll;
   background-color: #fff;
   border-radius: 6px;
-  margin: 4vw auto;
+  margin: 6vw auto;
 }
 
 
 /* header styling */
 .header{
-  flex: 2;
+  flex: 3;
+  height: 50vh;
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 30vh;
-  display: flex;
-  height: 4.5 rem;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  
   background-image: linear-gradient(to right bottom, #518C7A, #1F4036);
 }
 
 .headerTitle{
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -70,6 +69,7 @@ a{
 
 .headerForm {
   flex: 1;
+  margin: 20px;
 }
 
 
@@ -184,6 +184,8 @@ a{
   display: flex;
   flex-direction: row;
   overflow-y: scroll;
+  min-height: 35vh;
+  max-height: 50vh;
 }
 
 /* loading display */
@@ -243,6 +245,11 @@ a{
   flex: 1
 }
 
-/* .calendarContainer {
+.calendarContainer {
   flex: 1;
-} */
+  overflow: auto;
+}
+
+#calendar{
+  min-height: 800px;
+}
