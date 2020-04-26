@@ -183,7 +183,6 @@ a{
   flex: 3;
   display: flex;
   flex-direction: row;
-  overflow-y: scroll;
   min-height: 35vh;
   max-height: 50vh;
 }
@@ -197,6 +196,7 @@ a{
 /* results styling */
 .results{
   flex:1;
+  overflow-y: scroll;
 }
 .results__data{
   width: 100%;
@@ -243,6 +243,11 @@ a{
 /* selections styling */
 .selection{
   flex: 1
+}
+
+#heading-2{
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
 }
 
 .calendarContainer {
