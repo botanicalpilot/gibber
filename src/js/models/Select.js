@@ -5,12 +5,12 @@ export default class Select {
         this.crops = [];
     }
 
-    addItem(count, unit) {
+    addItem(crop, startDate, endDate) {
         const item = {
             id: uniqid(),
-            start, 
-            end
-    
+            crop,
+            startDate, 
+            endDate
         }
         this.crops.push(item);
         return(item);
@@ -21,10 +21,5 @@ export default class Select {
         const index = this.crops.findIndex(el => el.id === id);
         // remove that element by the index
         this.crops.splice(index, 1);
-    }
-
-    updateCount(id, newCount) {
-        // loop through elements and change matches with the newCount passed in 
-        this.crops.find(el => el.id === id).count = newCount;
     }
 }
