@@ -183,8 +183,8 @@ a{
   flex: 3;
   display: flex;
   flex-direction: row;
-  min-height: 35vh;
-  max-height: 50vh;
+  min-height: 50vh;
+  max-height: 75vh;
 }
 
 /* loading display */
@@ -239,6 +239,15 @@ a{
   align-items: center;
 }
 
+.sow_indoor_hide, .sow_outdoor_hide, .start_outdoor_hide{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
 
 /* selections styling */
 .selection{
@@ -261,8 +270,6 @@ a{
   align-items: center;
   flex: 1;
   flex-wrap: wrap;
-  
-  
 }
 
 #heading-2{
