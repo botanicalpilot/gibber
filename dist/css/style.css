@@ -242,7 +242,27 @@ a{
 
 /* selections styling */
 .selection{
-  flex: 1
+  flex: 1;
+  overflow-y: auto;
+}
+
+.selection__lists{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.indoor__list, .outdoor__list, .start__list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-wrap: wrap;
+  
+  
 }
 
 #heading-2{
