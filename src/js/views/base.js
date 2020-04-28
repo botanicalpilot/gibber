@@ -7,7 +7,7 @@ export const elements = {
     indoorSelection: document.querySelector('.indoor_selection'),
     outdoorSelection: document.querySelector('.outdoor_selection'),
     startSelection: document.querySelector('.start_selection'),
-    indoorAdd: document.querySelector('.indoorAdd'),
+    // indoorAdd: document.querySelector('.indoorAdd'),
 }
 
 

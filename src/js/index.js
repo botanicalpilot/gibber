@@ -55,7 +55,7 @@ const controlCrop = async () => {
 }
 
 // listen for hashchange or load
-['hashchange', 'load'].forEach(event => window.addEventListener(event, controlCrop));
+['hashchange'].forEach(event => window.addEventListener(event, controlCrop));
 
 
 /*
@@ -109,10 +109,11 @@ var calendar = new Calendar('#calendar', {
 
 
 // Handle button clicks to select crops
-elements.indoorAdd.addEventListener('click', e => {
-    controlIndoor();
-    console.log("hello")
-});
+// let indoorAdd = document.querySelector('.indoorAdd')
+// elements.indoorAdd.addEventListener('click', e => {
+//     controlIndoor();
+//     console.log("hello")
+// });
 
 
 
