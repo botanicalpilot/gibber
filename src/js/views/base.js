@@ -3,8 +3,13 @@ export const elements = {
     searchInput: document.querySelector('.search__field'),
     searchRes: document.querySelector('.results'),
     searchResList: document.querySelector('.results__list'),
-    accordionBtn: document.getElementsByClassName('results__data')
+    accordionBtn: document.getElementsByClassName('results__data'),
+    indoorSelection: document.querySelector('.indoor_selection'),
+    outdoorSelection: document.querySelector('.outdoor_selection'),
+    startSelection: document.querySelector('.start_selection'),
+    indoorAdd: document.querySelector('.indoorAdd'),
 }
+
 
 export const elementStrings = {
     loader: 'loader'

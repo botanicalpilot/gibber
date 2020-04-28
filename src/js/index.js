@@ -42,27 +42,30 @@ const controlSearch = async () => {
 
 /*
 Select Controllers
-controllers for indoor, sow, and start lists populated by selections made from UI
+controllers for indoor, sow, and start selection populated by selections made from UI
 */
 const controlIndoor = () => {
-    // create a new list if there isn't any. 
-    if (!state.list) state.list = new Select();
+    // create a new selection if there isn't any. 
+    if (!state.IndoorSelection) state.IndoorSelection = new Select();
 
-    // add each ingredient to the list
-    state.recipe.ingredients.forEach(el => {
-        const item = state.list.addItem(el.count, el.unit, el.ingredient);
-        listView.renderItem(item);
-    });
+    // add crop to the selection
+        const indoorItem = state.IndoorSelection.addItem(state.search.result.crop, state.search.result.startDate, state.search.result.endDate);
+        selectView.renderItem(indoorItem);
 }
 
+// handle delete events for selected indoor crops
+elements.indoorSelection.addEventListener('click', e => {
+    const id = e.target.closest('.indoor__item').dataset.itemid;
 
+    // handle delete event
+    if(e.target.matches('.indoor__delete, .indoor__delete *')) {
+        // delete from state
+        state.list.deleteItem(id);
 
-
-
-/*
-Calendar Controller
-*/
-
+        // delete from UI
+        listView.deleteItem(id);
+   }
+})
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
@@ -71,6 +74,10 @@ elements.searchForm.addEventListener('submit', e => {
 
 
 
+
+/*
+Calendar Controller
+*/
 var calendar = new Calendar('#calendar', {
     defaultView: 'month',
     taskView: false,
@@ -82,5 +89,11 @@ var calendar = new Calendar('#calendar', {
 });
 
 
-  
+
+// Handle button clicks to select crops
+elements.indoorAdd.addEventListener('click', e => {
+    controlIndoor();
+});
+
+
 
