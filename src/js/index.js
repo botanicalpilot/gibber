@@ -79,10 +79,10 @@ elements.indoorSelection.addEventListener('click', e => {
     // handle delete event
     if(e.target.matches('.indoor__delete, .indoor__delete *')) {
         // delete from state
-        state.list.deleteItem(id);
+        state.IndoorSelection.deleteItem(id);
 
         // delete from UI
-        listView.deleteItem(id);
+        selectView.deleteItem(id);
    }
 })
 elements.searchForm.addEventListener('submit', e => {

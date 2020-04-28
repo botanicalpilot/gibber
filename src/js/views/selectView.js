@@ -2,7 +2,7 @@ import { elements } from './base';
 
 export const renderItem = indoorItem => {
     const markup = `
-    <li class="indoor__item">
+    <li class="indoor__item" data-itemid=${indoorItem.id}>
         <div>${indoorItem.common}
             <!-- <div class="indoor__date__start">
             </div>
