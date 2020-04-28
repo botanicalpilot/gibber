@@ -6,14 +6,13 @@ export default class Search {
     // }
 
     async getResults(query) {
-        const proxy = 'https://cors-anywhere.herokuapp.com/';
         try{
             console.log(`query: ${query}`)
-            const res = await axios.get(`${proxy}https://thallus-api.herokuapp.com/api/crops?common_name=${query}`);
+            const res = await axios.get(`https://thallus-api.herokuapp.com/api/crops?common_name=${query}`);
             
             // if res returns empty array, try again by searching with scientific name. 
             if(res.data.length < 1){
-                const res2 = await axios.get(`${proxy}https://thallus-api.herokuapp.com/api/crops?scientific_name=${query}`)
+                const res2 = await axios.get(`https://thallus-api.herokuapp.com/api/crops?scientific_name=${query}`)
                 this.result = res2.data
             } else {this.result = res.data;}
 

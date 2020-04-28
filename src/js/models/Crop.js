@@ -7,8 +7,7 @@ export default class Crop {
     }
 
     async getCrop() {
-        const proxy = 'https://cors-anywhere.herokuapp.com/';
-        const res = await axios.get(`${proxy}https://thallus-api.herokuapp.com/api/${id}`);
+        const res = await axios.get(`https://thallus-api.herokuapp.com/api/${id}`);
         try {
             const res = await axios(`https://forkify-api.herokuapp.com/api/get?rId=${this.id}`);
             this.common = res.data.crop.common_name;
