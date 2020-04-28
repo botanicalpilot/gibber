@@ -55,7 +55,7 @@ const controlCrop = async () => {
 }
 
 // listen for hashchange or load
-['hashchange'].forEach(event => window.addEventListener(event, controlCrop));
+['hashchange', 'load'].forEach(event => window.addEventListener(event, controlCrop));
 
 
 /*
@@ -68,6 +68,7 @@ const controlIndoor = () => {
 
     // add crop to the selection
         const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd);
+        console.log(indoorItem);
         selectView.renderItem(indoorItem);
 }
 
@@ -109,11 +110,11 @@ var calendar = new Calendar('#calendar', {
 
 
 // Handle button clicks to select crops
-// let indoorAdd = document.querySelector('.indoorAdd')
-// elements.indoorAdd.addEventListener('click', e => {
-//     controlIndoor();
-//     console.log("hello")
-// });
+elements.searchRes.addEventListener('click', e => {
+    if(e.target.matches ('.indoorAdd')){
+            controlIndoor();
+    }
+});
 
 
 

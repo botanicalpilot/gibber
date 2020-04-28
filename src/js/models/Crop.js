@@ -7,23 +7,23 @@ export default class Crop {
     }
 
     async getCrop() {
-        const res = await axios.get(`https://thallus-api.herokuapp.com/api/${id}`);
         try {
-            const res = await axios(`https://forkify-api.herokuapp.com/api/get?rId=${this.id}`);
-            this.common = res.data.crop.common_name;
-            this.scientific = res.data.crop.scientific_name;
-            this.sowAll = res.data.crop.sow_all_season;
-            this.indoorStart = res.data.crop.sow_indoor_start;
-            this.indoorEnd = res.data.crop.sow_indoor_end;
-            this.sowStart = res.data.crop.sow_outdoor_start;
-            this.sowEnd = res.data.crop.sow_outdoor_end;
-            this.sowStart2 = res.data.crop.sow_outdoor_start_2;
-            this.sowEnd2 = res.data.crop.sow_outdoor_end_2;
-            this.startAll = res.data.crop.start_all_season;
-            this.startBegin = res.data.crop.start_outdoor_start;
-            this.startEnd = res.data.crop.start_outdoor_end;
-            this.startBegin2 = res.data.crop.start_outdoor_start_2;
-            this.startEnd2 = res.data.crop.start_outdoor_end_2;
+            const res = await axios.get(`https://thallus-api.herokuapp.com/api/crops/${this.id}`);
+            this.common = res.data.common_name;
+            console.log(this.common);
+            this.scientific = res.data.scientific_name;
+            this.sowAll = res.data.sow_all_season;
+            this.indoorStart = res.data.sow_indoor_start;
+            this.indoorEnd = res.data.sow_indoor_end;
+            this.sowStart = res.data.sow_outdoor_start;
+            this.sowEnd = res.data.sow_outdoor_end;
+            this.sowStart2 = res.data.sow_outdoor_start_2;
+            this.sowEnd2 = res.data.sow_outdoor_end_2;
+            this.startAll = res.data.start_all_season;
+            this.startBegin = res.data.start_outdoor_start;
+            this.startEnd = res.data.start_outdoor_end;
+            this.startBegin2 = res.data.start_outdoor_start_2;
+            this.startEnd2 = res.data.start_outdoor_end_2;
         } catch(error){
             console.log(error); 
             alert('Something went wrong :(');

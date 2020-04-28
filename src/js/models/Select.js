@@ -5,10 +5,11 @@ export default class Select {
         this.crops = [];
     }
 
-    addItem(crop, startDate, endDate) {
+    addItem(common, scientific, startDate, endDate) {
         const item = {
             id: uniqid(),
-            crop,
+            common, 
+            scientific,
             startDate, 
             endDate
         }

@@ -1,9 +1,9 @@
 import { elements } from './base';
 
-export const renderItem = item => {
+export const renderItem = indoorItem => {
     const markup = `
     <li class="indoor__item">
-        <div>${item.crop}
+        <div>${indoorItem.common}
             <!-- <div class="indoor__date__start">
             </div>
             <div class="indoor__date__end">
@@ -16,7 +16,7 @@ export const renderItem = item => {
         </div>
     </li>
     `;
-    elements.shopping.insertAdjacentHTML('beforeend', markup);
+    elements.indoorSelection.insertAdjacentHTML('beforeend', markup);
 };
 
 export const deleteItem = id => {
