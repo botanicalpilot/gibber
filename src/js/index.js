@@ -1,5 +1,6 @@
 import Search from './models/Search';
 import Select from './models/Select';
+import Crop from './models/Crop';
 import * as searchView from './views/searchView';
 import * as selectView from './views/selectView';
 import { elements, renderLoader, clearLoader } from './views/base';
@@ -40,6 +41,23 @@ const controlSearch = async () => {
     }
 }
 
+const controlCrop = async () => {
+    const id = window.location.hash.replace('#', '')
+
+    if(id){
+        state.crop = new Crop(id);
+        try {
+            await state.crop.getCrop();
+        } catch (error) {
+            alert("Error processing crop")
+        }
+    }
+}
+
+// listen for hashchange or load
+['hashchange', 'load'].forEach(event => window.addEventListener(event, controlCrop));
+
+
 /*
 Select Controllers
 controllers for indoor, sow, and start selection populated by selections made from UI
@@ -49,7 +67,7 @@ const controlIndoor = () => {
     if (!state.IndoorSelection) state.IndoorSelection = new Select();
 
     // add crop to the selection
-        const indoorItem = state.IndoorSelection.addItem(state.search.result.crop, state.search.result.startDate, state.search.result.endDate);
+        const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd);
         selectView.renderItem(indoorItem);
 }
 
@@ -93,6 +111,7 @@ var calendar = new Calendar('#calendar', {
 // Handle button clicks to select crops
 elements.indoorAdd.addEventListener('click', e => {
     controlIndoor();
+    console.log("hello")
 });
 
 

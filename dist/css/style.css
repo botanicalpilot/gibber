@@ -198,6 +198,10 @@ a{
   flex:1;
   overflow-y: scroll;
 }
+
+/* .results__link{
+  visibility: hidden;
+} */
 .results__data{
   width: 100%;
   height: 10vh;

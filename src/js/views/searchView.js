@@ -19,7 +19,7 @@ export const highlightSelected  = id => {
 };
 
 
-export const buildAccordion = () => {
+export const buildAccordion = id => {
     // const accordionBtn = document.getElementsByClassName('results__data');
     let i;
     
@@ -28,7 +28,7 @@ export const buildAccordion = () => {
             /* Toggle between adding and removing the "active" class,
             to highlight the button that controls the panel */
           this.classList.toggle("active");
-        
+          
             /* Toggle between hiding and showing the active panel */
           let panel = this.nextElementSibling;
             if (panel.style.display === "block"){
@@ -102,7 +102,7 @@ const renderCrop = crop => {
 
     const markup = `
     <li>
-    <a class="results__link results__link--active">
+    <a class="results__link" href="#${crop.id}">
         <button class="results__data">
             <div id="cn_style">${crop.common_name}</div><br>
             <div id="sn_style">${crop.scientific_name}</div>
@@ -112,8 +112,8 @@ const renderCrop = crop => {
             <div class="results__dates">
                 <div class=${indoorClass}>
                     <p>Sow Indoor Start: ${cropIndoorStart}</p>
-                    <p>end: Sow Indoor End: ${cropIndoorEnd}</p>
-                    <button id="indoorAdd">add</button>
+                    <p>Sow Indoor End: ${cropIndoorEnd}</p>
+                    <button class="indoorAdd">add</button>
                 </div>
                 <div class="${outdoorClass}">
                     <p>Sow Outdoor Start:<br> ${cropSowStart}</p>
