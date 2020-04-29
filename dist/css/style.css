@@ -108,7 +108,7 @@ a{
     fill: currentColor; }
 
 .btn-inline {
-  color: #F59A83;
+  color: #8C5E51;
   font-size: 1.2rem;
   border: none;
   background-color: #F9F5F3;
@@ -126,7 +126,7 @@ a{
   .btn-inline span {
     margin: 0 .4rem; }
   .btn-inline:hover {
-    color: #F48982;
+    color: #402118;
     background-color: #F2EFEE; }
   .btn-inline:focus {
     outline: none; }
@@ -140,15 +140,15 @@ a{
   .btn-tiny svg {
     height: 100%;
     width: 100%;
-    fill: #F59A83;
+    fill: #8C5E51;
     transition: all .3s; }
   .btn-tiny:focus {
     outline: none; }
   .btn-tiny:hover svg {
-    fill: #F48982;
+    fill: #402118;
     transform: translateY(-1px); }
   .btn-tiny:active svg {
-    fill: #F48982;
+    fill: #402118;
     transform: translateY(0); }
   .btn-tiny:not(:last-child) {
     margin-right: .3rem; }
@@ -256,14 +256,13 @@ a{
 /* selections styling */
 .selection{
   flex: 1;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .selection__lists{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
@@ -274,7 +273,26 @@ a{
   align-items: center;
   flex: 1;
   flex-wrap: wrap;
+  
 }
+.indoor__delete, .sow__delete, .start__delete {
+  position: relative;
+  top: 10px;
+  right: 0;
+  /* background-image: linear-gradient(to right, transparent 0%, #fff 40%, #fff 100%);
+  width: 3.75rem; */
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s; }
+.indoor__item:hover .indoor__delete {
+  opacity: 1;
+  visibility: visible; }
+.sow__item:hover .sow__delete {
+    opacity: 1;
+    visibility: visible; }
+.start__item:hover .start__delete {
+      opacity: 1;
+      visibility: visible; }
 
 #heading-2{
   font-family: 'Open Sans', sans-serif;
