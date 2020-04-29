@@ -62,14 +62,32 @@ const controlCrop = async () => {
 Select Controllers
 controllers for indoor, sow, and start selection populated by selections made from UI
 */
-const controlIndoor = () => {
-    // create a new selection if there isn't any. 
-    if (!state.IndoorSelection) state.IndoorSelection = new Select();
+const controlSelect = growingChoice => {
+    if(growingChoice === 'indoor'){
+        // create a new selection if there isn't any. 
+        if (!state.IndoorSelection) state.IndoorSelection = new Select();
 
-    // add crop to the selection
-        const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd);
-        console.log(indoorItem);
-        selectView.renderItem(indoorItem);
+        // add crop to the selection
+            const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd);
+            console.log(indoorItem);
+            selectView.renderItem(growingChoice, indoorItem);
+    } else if(growingChoice === 'sow'){
+        // create a new selection if there isn't any. 
+        if (!state.sowSelection) state.sowSelection = new Select();
+
+        // add crop to the selection
+            const sowItem = state.sowSelection.addItem(state.crop.common, state.crop.scientific, state.crop.sowStart, state.crop.sowEnd);
+            console.log(sowItem);
+            selectView.renderItem(growingChoice, sowItem);
+    } else if(growingChoice === 'start'){
+        // create a new selection if there isn't any. 
+        if (!state.startSelection) state.startSelection = new Select();
+
+        // add crop to the selection
+            const startItem = state.startSelection.addItem(state.crop.common, state.crop.scientific, state.crop.startStart, state.crop.startEnd);
+            console.log(startItem);
+            selectView.renderItem(growingChoice, startItem);
+    }
 }
 
 // handle delete events for selected indoor crops
@@ -84,7 +102,39 @@ elements.indoorSelection.addEventListener('click', e => {
         // delete from UI
         selectView.deleteItem(id);
    }
-})
+});
+
+// delete sow selection crops
+elements.sowSelection.addEventListener('click', e => {
+    const id = e.target.closest('.sow__item').dataset.itemid;
+
+    // handle delete event
+    if(e.target.matches('.sow__delete, .sow__delete *')) {
+        // delete from state
+        state.sowSelection.deleteItem(id);
+
+        // delete from UI
+        selectView.deleteItem(id);
+   }
+});
+
+// delete start selection crops
+elements.startSelection.addEventListener('click', e => {
+    const id = e.target.closest('.start__item').dataset.itemid;
+
+    // handle delete event
+    if(e.target.matches('.start__delete, .start__delete *')) {
+        // delete from state
+        state.startSelection.deleteItem(id);
+
+        // delete from UI
+        selectView.deleteItem(id);
+   }
+});
+
+
+
+
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
@@ -112,7 +162,11 @@ var calendar = new Calendar('#calendar', {
 // Handle button clicks to select crops
 elements.searchRes.addEventListener('click', e => {
     if(e.target.matches ('.indoorAdd')){
-            controlIndoor();
+            controlSelect('indoor');
+    } else if (e.target.matches ('.sowAdd')){
+        controlSelect('sow');
+    } else if(e.target.matches ('.startAdd')){
+        controlSelect('start');
     }
 });
 

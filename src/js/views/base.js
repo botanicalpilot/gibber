@@ -5,7 +5,7 @@ export const elements = {
     searchResList: document.querySelector('.results__list'),
     accordionBtn: document.getElementsByClassName('results__data'),
     indoorSelection: document.querySelector('.indoor_selection'),
-    outdoorSelection: document.querySelector('.outdoor_selection'),
+    sowSelection: document.querySelector('.sow_selection'),
     startSelection: document.querySelector('.start_selection'),
     indoorAdd: document.querySelector('.indoorAdd'),
 }

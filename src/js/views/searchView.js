@@ -118,12 +118,12 @@ const renderCrop = crop => {
                 <div class="${outdoorClass}">
                     <p>Sow Outdoor Start:<br> ${cropSowStart}</p>
                     <p>Sow Outdoor End: ${cropSowEnd}</p>
-                    <button id="outdoorAdd">add</button>
+                    <button class="sowAdd">add</button>
                 </div>
                 <div class="${startClass}">
                     <p>Plant Starts Outdoor: ${startBegin}</p>
                     <p>Plant Starts Outdoor End: ${startEnd}
-                    <button id="startAdd">add</button>
+                    <button class="startAdd">add</button>
                 </div>
             </div>
         </div>

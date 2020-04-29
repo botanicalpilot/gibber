@@ -267,7 +267,7 @@ a{
   flex-wrap: wrap;
 }
 
-.indoor__list, .outdoor__list, .start__list{
+.indoor__list, .sow__list, .start__list{
   display: flex;
   flex-direction: column;
   justify-content: center;
