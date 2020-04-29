@@ -6,6 +6,12 @@ export default class Select {
     }
 
     addItem(common, scientific, startDate, endDate) {
+        
+            // let current = new Date()
+            // let year  = current.getFullYear()
+            // return rawDate.replace("2020", year)
+        
+
         const item = {
             id: uniqid(),
             common, 

@@ -5,10 +5,10 @@ export const renderItem = (growingChoice, crop) => {
     let markup = `
         <li class="indoor__item" data-itemid=${crop.id}>
             <div>${crop.common}
-                <!-- <div class="indoor__date__start">
+                <div class="indoor__date__start"> ${crop.startDate}
                 </div>
                 <div class="indoor__date__end">
-                </div> -->
+                </div>
                 <button class="indoor__delete btn-tiny">
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-cross"></use>

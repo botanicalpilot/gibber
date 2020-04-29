@@ -6,6 +6,8 @@ export default class Crop {
         this.id = id;
     }
 
+
+
     async getCrop() {
         try {
             const res = await axios.get(`https://thallus-api.herokuapp.com/api/crops/${this.id}`);
