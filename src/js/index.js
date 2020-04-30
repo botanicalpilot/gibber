@@ -59,6 +59,23 @@ const controlCrop = async () => {
 
 
 /*
+Calendar Controller
+*/
+var calendar = new Calendar('#calendar', {
+    defaultView: 'month',
+    taskView: false,
+    scheduleView: 'time',
+    calendarId: '1',
+    template: {
+        monthDayname: function(dayname) {
+            return `<span class="calendar-week-dayname-name">${dayname.label}</span>`;
+        }
+    }
+});
+
+
+
+/*
 Select Controllers
 controllers for indoor, sow, and start selection populated by selections made from UI
 */
@@ -71,6 +88,7 @@ const controlSelect = growingChoice => {
             const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd);
             console.log(indoorItem);
             selectView.renderItem(growingChoice, indoorItem);
+            calendar.createSchedules([indoorItem]);
     } else if(growingChoice === 'sow'){
         // create a new selection if there isn't any. 
         if (!state.sowSelection) state.sowSelection = new Select();
@@ -79,6 +97,7 @@ const controlSelect = growingChoice => {
             const sowItem = state.sowSelection.addItem(state.crop.common, state.crop.scientific, state.crop.sowStart, state.crop.sowEnd);
             console.log(sowItem);
             selectView.renderItem(growingChoice, sowItem);
+            calendar.createSchedules([sowItem]);
     } else if(growingChoice === 'start'){
         // create a new selection if there isn't any. 
         if (!state.startSelection) state.startSelection = new Select();
@@ -87,8 +106,14 @@ const controlSelect = growingChoice => {
             const startItem = state.startSelection.addItem(state.crop.common, state.crop.scientific, state.crop.startStart, state.crop.startEnd);
             console.log(startItem);
             selectView.renderItem(growingChoice, startItem);
+            calendar.createSchedules([startItem]);
     }
 }
+
+
+
+
+
 
 // handle delete events for selected indoor crops
 elements.indoorSelection.addEventListener('click', e => {
@@ -140,33 +165,18 @@ elements.searchForm.addEventListener('submit', e => {
     controlSearch();
 });
 
-
-
-
-
-/*
-Calendar Controller
-*/
-var calendar = new Calendar('#calendar', {
-    defaultView: 'month',
-    taskView: false,
-    template: {
-        monthDayname: function(dayname) {
-            return `<span class="calendar-week-dayname-name">${dayname.label}</span>`;
-        }
-    }
-});
-
-
-
 // Handle button clicks to select crops
 elements.searchRes.addEventListener('click', e => {
     if(e.target.matches ('.indoorAdd')){
-            controlSelect('indoor');
+        controlSelect('indoor');
+            
     } else if (e.target.matches ('.sowAdd')){
         controlSelect('sow');
+        
     } else if(e.target.matches ('.startAdd')){
         controlSelect('start');
+        
+
     }
 });
 

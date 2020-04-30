@@ -5,7 +5,7 @@ export default class Select {
         this.crops = [];
     }
 
-    addItem(common, scientific, startDate, endDate) {
+    addItem(common, scientific, start, end) {
         
             // let current = new Date()
             // let year  = current.getFullYear()
@@ -14,10 +14,12 @@ export default class Select {
 
         const item = {
             id: uniqid(),
-            common, 
-            scientific,
-            startDate, 
-            endDate
+            calendarId: 1,
+            title: common, 
+            category: 'time',
+            dueDateClass:'',
+            start, 
+            end
         }
         this.crops.push(item);
         return(item);
