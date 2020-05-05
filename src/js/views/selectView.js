@@ -4,8 +4,8 @@ export const renderItem = (growingChoice, crop) => {
     if(growingChoice === 'indoor'){
     let markup = `
         <li class="indoor__item" data-itemid=${crop.id}>
-            <div>${crop.common}
-                <div class="indoor__date__start"> ${crop.startDate}
+            <div>${crop.title}
+                <div class="indoor__date__start">
                 </div>
                 <div class="indoor__date__end">
                 </div>
@@ -20,7 +20,7 @@ export const renderItem = (growingChoice, crop) => {
     elements.indoorSelection.insertAdjacentHTML('beforeend', markup);} else if(growingChoice === 'sow'){
         let markup = `
         <li class="sow__item" data-itemid=${crop.id}>
-            <div>${crop.common}
+            <div>${crop.title}
                 <!-- <div class="sow__date__start"></div>
                 <div class="sow__date__end"></div> -->
                 <button class="sow__delete btn-tiny">
@@ -35,7 +35,7 @@ export const renderItem = (growingChoice, crop) => {
     } else if (growingChoice === 'start'){
         let markup = `
         <li class="start__item" data-itemid=${crop.id}>
-            <div>${crop.common}
+            <div>${crop.title}
                 <!-- <div class="start__date__start"></div>
                 <div class="start__date__end"></div> -->
                 <button class="start__delete btn-tiny">
