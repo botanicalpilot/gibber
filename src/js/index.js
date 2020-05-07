@@ -61,6 +61,23 @@ const controlCrop = async () => {
 /*
 Calendar Controller
 */
+let dateMonth = new Date();
+const month = new Array();
+month[0] = "January";
+month[1] = "February";
+month[2] = "March";
+month[3] = "April";
+month[4] = "May";
+month[5] = "June";
+month[6] = "July";
+month[7] = "August";
+month[8] = "September";
+month[9] = "October";
+month[10] = "November";
+month[11] = "December";
+let currentMonth = month[dateMonth.getMonth()];
+
+elements.calendarMonth.insertAdjacentHTML('afterbegin', currentMonth)
 var calendar = new Calendar('#calendar', {
     defaultView: 'month',
     taskView: false,
@@ -72,6 +89,8 @@ var calendar = new Calendar('#calendar', {
         }
     }
 });
+
+
 
 
 
@@ -129,7 +148,6 @@ elements.indoorSelection.addEventListener('click', e => {
 
         // delete from UI
         selectView.deleteItem(id);
-        
    }
 });
 

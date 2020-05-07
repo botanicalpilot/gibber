@@ -8,6 +8,7 @@ export const elements = {
     sowSelection: document.querySelector('.sow_selection'),
     startSelection: document.querySelector('.start_selection'),
     indoorAdd: document.querySelector('.indoorAdd'),
+    calendarMonth: document.querySelector('#calendarMonth'),
 }
 
 
