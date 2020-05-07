@@ -88,6 +88,7 @@ const controlSelect = growingChoice => {
             const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd);
             console.log(indoorItem);
             selectView.renderItem(growingChoice, indoorItem);
+            console.log(indoorItem)
             calendar.createSchedules([indoorItem]);
     } else if(growingChoice === 'sow'){
         // create a new selection if there isn't any. 
@@ -122,7 +123,8 @@ elements.indoorSelection.addEventListener('click', e => {
     // handle delete event
     if(e.target.matches('.indoor__delete, .indoor__delete *')) {
         // delete from state
-        calendar.deleteSchedule(schedule.id, "1");
+        console.log(id)
+        calendar.deleteSchedule(id, 1);
         state.IndoorSelection.deleteItem(id);
 
         // delete from UI
@@ -138,7 +140,7 @@ elements.sowSelection.addEventListener('click', e => {
     // handle delete event
     if(e.target.matches('.sow__delete, .sow__delete *')) {
         // delete from state
-        calendar.deleteSchedule(schedule.id, "1");
+        calendar.deleteSchedule(id, 1);
         state.sowSelection.deleteItem(id);
 
         // delete from UI
@@ -153,7 +155,7 @@ elements.startSelection.addEventListener('click', e => {
     // handle delete event
     if(e.target.matches('.start__delete, .start__delete *')) {
         // delete from state
-        calendar.deleteSchedule(schedule.id, "1");
+        calendar.deleteSchedule(id, 1);
         state.startSelection.deleteItem(id);
 
         // delete from UI

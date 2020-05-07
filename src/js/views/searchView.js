@@ -142,5 +142,4 @@ export const renderResults = crops => {
     console.log(crops)
     crops.forEach(renderCrop)
     buildAccordion()
-    
 }
