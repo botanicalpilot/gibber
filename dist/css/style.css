@@ -304,6 +304,11 @@ a{
   overflow: auto;
 }
 
+#calendarHeader{
+  font-family: 'BioRhyme', serif;
+  text-align: center;
+}
+
 #calendar{
   min-height: 800px;
 }
