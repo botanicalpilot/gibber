@@ -104,7 +104,7 @@ const controlSelect = growingChoice => {
         if (!state.IndoorSelection) state.IndoorSelection = new Select();
 
         // add crop to the selection
-            const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd);
+            const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd, 'red');
             console.log(indoorItem);
             selectView.renderItem(growingChoice, indoorItem);
             console.log(indoorItem)
@@ -114,7 +114,7 @@ const controlSelect = growingChoice => {
         if (!state.sowSelection) state.sowSelection = new Select();
 
         // add crop to the selection
-            const sowItem = state.sowSelection.addItem(state.crop.common, state.crop.scientific, state.crop.sowStart, state.crop.sowEnd);
+            const sowItem = state.sowSelection.addItem(state.crop.common, state.crop.scientific, state.crop.sowStart, state.crop.sowEnd, 'blue');
             console.log(sowItem);
             selectView.renderItem(growingChoice, sowItem);
             calendar.createSchedules([sowItem]);
@@ -123,7 +123,7 @@ const controlSelect = growingChoice => {
         if (!state.startSelection) state.startSelection = new Select();
 
         // add crop to the selection
-            const startItem = state.startSelection.addItem(state.crop.common, state.crop.scientific, state.crop.startStart, state.crop.startEnd);
+            const startItem = state.startSelection.addItem(state.crop.common, state.crop.scientific, state.crop.startStart, state.crop.startEnd, 'green');
             console.log(startItem);
             selectView.renderItem(growingChoice, startItem);
             calendar.createSchedules([startItem]);

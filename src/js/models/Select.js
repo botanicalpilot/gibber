@@ -5,7 +5,7 @@ export default class Select {
         this.crops = [];
     }
 
-    addItem(common, scientific, start, end) {
+    addItem(common, scientific, start, end, color) {
         
             // let current = new Date()
             // let year  = current.getFullYear()
@@ -19,7 +19,8 @@ export default class Select {
             category: 'time',
             dueDateClass:'',
             start, 
-            end
+            end, 
+            bgColor: color,
         }
         this.crops.push(item);
         return(item);
