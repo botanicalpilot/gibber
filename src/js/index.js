@@ -5,6 +5,7 @@ import * as searchView from './views/searchView';
 import * as selectView from './views/selectView';
 import { elements, renderLoader, clearLoader } from './views/base';
 import Calendar from 'tui-calendar';
+import templates from './views/calendar';
 import "tui-calendar/dist/tui-calendar.css";
 import 'tui-date-picker/dist/tui-date-picker.css';
 import 'tui-time-picker/dist/tui-time-picker.css';
@@ -83,26 +84,25 @@ var calendar = new Calendar('#calendar', {
     taskView: false,
     scheduleView: 'time',
     calendarId: '1',
-    template: {
-        monthDayname: function(dayname) {
-            return `<span class="calendar-week-dayname-name">${dayname.label}</span>`;
-        }
-    }
+    template:  templates,
+    useCreationPopup: true,
+    useDetailPopup: true
 });
 
 // calendar.on('clickSchedule', function(event) {
 //     var schedule = event.schedule;
+//     calendar.monthDayname(schedule)
 //     // focus the schedule
-//     if (lastClickSchedule) {
-//         calendar.updateSchedule(lastClickSchedule.id, 1, {
-//             isFocused: false
-//         });
-//     }
-//     calendar.updateSchedule(schedule.id, schedule.calendarId, {
-//         isFocused: true
-//     });
+//     // if (lastClickSchedule) {
+//     //     calendar.updateSchedule(lastClickSchedule.id, 1, {
+//     //         isFocused: false
+//     //     });
+//     // }
+//     // calendar.updateSchedule(schedule.id, schedule.calendarId, {
+//     //     isFocused: true
+//     // });
 
-//     lastClickSchedule = schedule;
+//     // lastClickSchedule = schedule;
 
 //     // open detail view
 // });

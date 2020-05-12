@@ -5,7 +5,7 @@ import '../../../node_modules/tui-date-picker/dist/tui-date-picker.css';
 import '../../../node_modules/tui-time-picker/dist/tui-time-picker.css';
 
 // register templates
-const templates = {
+export const templates = {
     milestone: function(schedule) {
         return '<span class="calendar-font-icon ic-milestone-b"></span> <span style="background-color: ' + schedule.bgColor + '">' + schedule.title + '</span>';
     },
@@ -226,10 +226,12 @@ const templates = {
     }
 }
 
-export const calendar = new Calendar('#calendar', {
-    defaultView: 'month',
-    taskView: true,
-    scheduleView: ['time'],
-    template: templates,
-    }
-});
+// export const calendar = new Calendar('#calendar', {
+//     defaultView: 'month',
+//     taskView: true,
+//     template: {
+//         monthDayname: function(dayname) {
+//           return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
+//         }
+//     }
+// });
