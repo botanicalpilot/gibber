@@ -90,22 +90,22 @@ var calendar = new Calendar('#calendar', {
     }
 });
 
-calendar.on('clickSchedule', function(event) {
-    var schedule = event.schedule;
-    // focus the schedule
-    if (lastClickSchedule) {
-        calendar.updateSchedule(lastClickSchedule.id, 1, {
-            isFocused: false
-        });
-    }
-    // calendar.updateSchedule(schedule.id, schedule.calendarId, {
-    //     isFocused: true
-    // });
+// calendar.on('clickSchedule', function(event) {
+//     var schedule = event.schedule;
+//     // focus the schedule
+//     if (lastClickSchedule) {
+//         calendar.updateSchedule(lastClickSchedule.id, 1, {
+//             isFocused: false
+//         });
+//     }
+//     calendar.updateSchedule(schedule.id, schedule.calendarId, {
+//         isFocused: true
+//     });
 
-    lastClickSchedule = schedule;
+//     lastClickSchedule = schedule;
 
-    // open detail view
-});
+//     // open detail view
+// });
 
 
 
