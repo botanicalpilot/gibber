@@ -14,6 +14,11 @@ export const renderItem = (growingChoice, crop) => {
                         <use href="img/icons.svg#icon-circle-with-cross"></use>
                     </svg>
                 </button>
+                <button class="indoor__add btn-tiny">
+                    <svg>
+                        <use href="img/icons.svg#icon-circle-with-plus"></use>
+                    </svg>
+                </button>
             </div>
         </li>
     `;
@@ -26,6 +31,11 @@ export const renderItem = (growingChoice, crop) => {
                 <button class="sow__delete btn-tiny">
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-cross"></use>
+                    </svg>
+                </button>
+                <button class="sow__add btn-tiny">
+                    <svg>
+                        <use href="img/icons.svg#icon-circle-with-plus"></use>
                     </svg>
                 </button>
             </div>
@@ -41,6 +51,11 @@ export const renderItem = (growingChoice, crop) => {
                 <button class="start__delete btn-tiny">
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-cross"></use>
+                    </svg>
+                </button>
+                <button class="start__add btn-tiny">
+                    <svg>
+                        <use href="img/icons.svg#icon-circle-with-plus"></use>
                     </svg>
                 </button>
             </div>

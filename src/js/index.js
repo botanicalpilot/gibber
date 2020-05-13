@@ -89,25 +89,6 @@ var calendar = new Calendar('#calendar', {
     useDetailPopup: true
 });
 
-// calendar.on('clickSchedule', function(event) {
-//     var schedule = event.schedule;
-//     calendar.monthDayname(schedule)
-//     // focus the schedule
-//     // if (lastClickSchedule) {
-//     //     calendar.updateSchedule(lastClickSchedule.id, 1, {
-//     //         isFocused: false
-//     //     });
-//     // }
-//     // calendar.updateSchedule(schedule.id, schedule.calendarId, {
-//     //     isFocused: true
-//     // });
-
-//     // lastClickSchedule = schedule;
-
-//     // open detail view
-// });
-
-
 
 
 
