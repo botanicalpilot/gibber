@@ -18,6 +18,7 @@ export const renderItem = (growingChoice, crop) => {
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-plus"></use>
                     </svg>
+                    <div class="calInsert"></div>
                 </button>
             </div>
         </li>
@@ -37,6 +38,7 @@ export const renderItem = (growingChoice, crop) => {
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-plus"></use>
                     </svg>
+                    <div class="calInsert"></div>
                 </button>
             </div>
         </li>
@@ -57,6 +59,7 @@ export const renderItem = (growingChoice, crop) => {
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-plus"></use>
                     </svg>
+                    <div class="calInsert"></div>
                 </button>
             </div>
         </li>
@@ -69,3 +72,7 @@ export const deleteItem = id => {
     const item = document.querySelector(`[data-itemid="${id}"]`);
     if (item) item.parentElement.removeChild(item);
 };
+
+// export const addToCalendar = id => {
+    
+// }
