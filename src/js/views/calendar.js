@@ -3,6 +3,7 @@ import "../../../node_modules/tui-calendar/dist/tui-calendar.css";
 
 import '../../../node_modules/tui-date-picker/dist/tui-date-picker.css';
 import '../../../node_modules/tui-time-picker/dist/tui-time-picker.css';
+import '../../../node_modules/add-to-calendar-buttons/add-to-calendar.js';
 
 // register templates
 export const templates = {
