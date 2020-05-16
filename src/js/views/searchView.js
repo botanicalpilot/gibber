@@ -1,5 +1,7 @@
 import { elements } from './base';
 
+
+
 export const getInput = () =>
     elements.searchInput.value;
 export const getParam = () =>                     elements.searchParam.value;

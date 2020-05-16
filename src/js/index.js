@@ -9,6 +9,7 @@ import templates from './views/calendar';
 import "tui-calendar/dist/tui-calendar.css";
 import 'tui-date-picker/dist/tui-date-picker.css';
 import 'tui-time-picker/dist/tui-time-picker.css';
+import {addToCalendar} from '../../node_modules/js-add-to-calendar-buttons';
 
 
 // import axios from 'axios';
@@ -105,8 +106,26 @@ const controlSelect = growingChoice => {
             const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd, '#8C5866');
             console.log(indoorItem);
             selectView.renderItem(growingChoice, indoorItem);
-            console.log(indoorItem)
             calendar.createSchedules([indoorItem]);
+
+            var myCalendar = addToCalendar({
+                options: {
+                    class: 'my-class',
+                    id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+                },
+                data: {
+                    title: 'Start ${state.crop.common} Indoors',     // Event title
+                    start: new Date('June 14, 2013 23:00'),   // Event start date
+                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
+                    end: new Date('June 15, 2013 23:00'),     // If an end time is set, this will take precedence over duration
+                    // duration: 120,                            // Event duration (IN MINUTES)
+                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    address: 'The internet',
+                    description: 'Get on the front page of HN, then prepare for world domination.'
+                }
+            });
+    
+            document.querySelector('.new-cal').appendChild(myCalendar);
     } else if(growingChoice === 'sow'){
         // create a new selection if there isn't any. 
         if (!state.sowSelection) state.sowSelection = new Select();

@@ -1,5 +1,6 @@
 import { elements } from './base';
 
+
 export const renderItem = (growingChoice, crop) => {
     if(growingChoice === 'indoor'){
     let markup = `
@@ -18,7 +19,7 @@ export const renderItem = (growingChoice, crop) => {
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-plus"></use>
                     </svg>
-                    <div class="calInsert"></div>
+                    <div class="new-cal"></div>
                 </button>
             </div>
         </li>
@@ -47,6 +48,7 @@ export const renderItem = (growingChoice, crop) => {
     } else if (growingChoice === 'start'){
         let markup = `
         <li class="start__item" data-itemid=${crop.id}>
+            <div class="new-cal"></div>
             <div>${crop.title}
                 <!-- <div class="start__date__start"></div>
                 <div class="start__date__end"></div> -->
@@ -59,7 +61,6 @@ export const renderItem = (growingChoice, crop) => {
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-plus"></use>
                     </svg>
-                    <div class="calInsert"></div>
                 </button>
             </div>
         </li>
@@ -73,6 +74,3 @@ export const deleteItem = id => {
     if (item) item.parentElement.removeChild(item);
 };
 
-// export const addToCalendar = id => {
-    
-// }
