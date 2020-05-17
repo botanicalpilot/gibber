@@ -9,6 +9,7 @@ export const elements = {
     startSelection: document.querySelector('.start_selection'),
     indoorAdd: document.querySelector('.indoorAdd'),
     calendarMonth: document.querySelector('#calendarMonth'),
+    calendarButtonInsert: document.querySelector('.new-cal')
 }
 
 

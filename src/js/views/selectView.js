@@ -19,7 +19,7 @@ export const renderItem = (growingChoice, crop) => {
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-plus"></use>
                     </svg>
-                    <div class="new-cal"></div>
+                    <div class="new-indoor-cal"></div>
                 </button>
             </div>
         </li>
@@ -39,7 +39,7 @@ export const renderItem = (growingChoice, crop) => {
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-plus"></use>
                     </svg>
-                    <div class="calInsert"></div>
+                    <div class="new-sow-cal"></div>
                 </button>
             </div>
         </li>
@@ -56,11 +56,7 @@ export const renderItem = (growingChoice, crop) => {
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-cross"></use>
                     </svg>
-                </button>
-                <button class="start__add btn-tiny">
-                    <svg>
-                        <use href="img/icons.svg#icon-circle-with-plus"></use>
-                    </svg>
+                    <div class="new-start-cal"></div>
                 </button>
             </div>
         </li>
