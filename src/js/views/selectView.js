@@ -1,6 +1,7 @@
 import { elements } from './base';
 
 
+
 export const renderItem = (growingChoice, crop) => {
     if(growingChoice === 'indoor'){
     let markup = `
@@ -16,13 +17,11 @@ export const renderItem = (growingChoice, crop) => {
                     </svg>
                 </button>
                 <button class="indoor__add btn-tiny">
-                    <svg>
-                        <use href="img/icons.svg#icon-circle-with-plus"></use>
-                    </svg>
                     <div class="new-indoor-cal"></div>
                 </button>
             </div>
         </li>
+        
     `;
     elements.indoorSelection.insertAdjacentHTML('beforeend', markup);} else if(growingChoice === 'sow'){
         let markup = `
@@ -36,9 +35,6 @@ export const renderItem = (growingChoice, crop) => {
                     </svg>
                 </button>
                 <button class="sow__add btn-tiny">
-                    <svg>
-                        <use href="img/icons.svg#icon-circle-with-plus"></use>
-                    </svg>
                     <div class="new-sow-cal"></div>
                 </button>
             </div>

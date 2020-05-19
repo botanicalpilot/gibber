@@ -3,9 +3,9 @@ import Select from './models/Select';
 import Crop from './models/Crop';
 import * as searchView from './views/searchView';
 import * as selectView from './views/selectView';
+import * as calendarButtons from './views/calendarButtons';
 import { elements, renderLoader, clearLoader } from './views/base';
 import Calendar from 'tui-calendar';
-import templates from './views/calendar';
 import "tui-calendar/dist/tui-calendar.css";
 import 'tui-date-picker/dist/tui-date-picker.css';
 import 'tui-time-picker/dist/tui-time-picker.css';
@@ -85,7 +85,6 @@ var calendar = new Calendar('#calendar', {
     taskView: false,
     scheduleView: 'time',
     calendarId: '1',
-    template:  templates,
     useCreationPopup: true,
     useDetailPopup: true
 });
@@ -104,28 +103,27 @@ const controlSelect = growingChoice => {
 
         // add crop to the selection
             const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd, '#8C5866');
-            console.log(indoorItem);
+            console.log(state.crop.indoorStart);
             selectView.renderItem(growingChoice, indoorItem);
             calendar.createSchedules([indoorItem]);
 
             var myCalendar = addToCalendar({
                 options: {
                     class: 'my-class',
-                    id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+                    id: state.crop.id                               // If you don't pass an id, one will be generated for you.
                 },
                 data: {
-                    title: 'Start ${state.crop.common} Indoors',     // Event title
-                    start: new Date('June 14, 2013 23:00'),   // Event start date
+                    title: `Start ${state.crop.common} from seed indoors`,     // Event title
+                    start: new Date(state.crop.indoorStart),   // Event start date
                     // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
-                    end: new Date('June 15, 2013 23:00'),     // If an end time is set, this will take precedence over duration
+                    end: new Date(state.crop.indoorEnd),     // If an end time is set, this will take precedence over duration
                     // duration: 120,                            // Event duration (IN MINUTES)
                     // allday: true,													// Override end time, duration and timezone, triggers 'all day'
-                    address: 'The internet',
-                    description: 'Get on the front page of HN, then prepare for world domination.'
+                    address: 'Portland, OR, USA',
+                    description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
             });
-    
-            document.querySelector('.new-cal').appendChild(myCalendar);
+            document.querySelector(`.new-indoor-cal`).appendChild(myCalendar);
     } else if(growingChoice === 'sow'){
         // create a new selection if there isn't any. 
         if (!state.sowSelection) state.sowSelection = new Select();
@@ -135,6 +133,26 @@ const controlSelect = growingChoice => {
             console.log(sowItem);
             selectView.renderItem(growingChoice, sowItem);
             calendar.createSchedules([sowItem]);
+
+            var myCalendar = addToCalendar({
+                options: {
+                    class: 'my-class',
+                    id: state.crop.id,                              // If you don't pass an id, one will be generated for you.
+                },
+                data: {
+                    title: `Start ${state.crop.common} from seed indoors`,     // Event title
+                    start: new Date(state.crop.indoorStart),   // Event start date
+                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
+                    end: new Date(state.crop.indoorEnd),     // If an end time is set, this will take precedence over duration
+                    // duration: 120,                            // Event duration (IN MINUTES)
+                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    address: 'Portland, OR, USA',
+                    description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
+                }
+            });
+            document.querySelector(`.new-sow-cal`).appendChild(myCalendar);
+            
+
     } else if(growingChoice === 'start'){
         // create a new selection if there isn't any. 
         if (!state.startSelection) state.startSelection = new Select();
