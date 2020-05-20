@@ -3,62 +3,22 @@ import { elements } from './base';
 
 
 export const renderItem = (growingChoice, crop) => {
-    if(growingChoice === 'indoor'){
     let markup = `
-        <li class="indoor__item" data-itemid=${crop.id}>
-            <div>${crop.title}
-                <div class="indoor__date__start">
+        <li class="crop__item">
+            <div class="crop">${crop.title}
+                <div class="growingChoice">${growingChoice}</div>
+                <div class="cropDates">${crop.start} - ${crop.end}
                 </div>
-                <div class="indoor__date__end">
-                </div>
-                <button class="indoor__delete btn-tiny">
+                <button class="crop__delete btn-tiny">
                     <svg>
                         <use href="img/icons.svg#icon-circle-with-cross"></use>
                     </svg>
-                </button>
-                <button class="indoor__add btn-tiny">
-                    <div class="new-indoor-cal"></div>
                 </button>
             </div>
         </li>
         
     `;
-    elements.indoorSelection.insertAdjacentHTML('beforeend', markup);} else if(growingChoice === 'sow'){
-        let markup = `
-        <li class="sow__item" data-itemid=${crop.id}>
-            <div>${crop.title}
-                <!-- <div class="sow__date__start"></div>
-                <div class="sow__date__end"></div> -->
-                <button class="sow__delete btn-tiny">
-                    <svg>
-                        <use href="img/icons.svg#icon-circle-with-cross"></use>
-                    </svg>
-                </button>
-                <button class="sow__add btn-tiny">
-                    <div class="new-sow-cal"></div>
-                </button>
-            </div>
-        </li>
-        `;
-        elements.sowSelection.insertAdjacentHTML('beforeend', markup);
-    } else if (growingChoice === 'start'){
-        let markup = `
-        <li class="start__item" data-itemid=${crop.id}>
-            <div class="new-cal"></div>
-            <div>${crop.title}
-                <!-- <div class="start__date__start"></div>
-                <div class="start__date__end"></div> -->
-                <button class="start__delete btn-tiny">
-                    <svg>
-                        <use href="img/icons.svg#icon-circle-with-cross"></use>
-                    </svg>
-                    <div class="new-start-cal"></div>
-                </button>
-            </div>
-        </li>
-        `;
-        elements.startSelection.insertAdjacentHTML('beforeend', markup);
-        }
+    elements.cropSelection.insertAdjacentHTML('beforeend', markup); 
 };
 
 export const deleteItem = id => {
