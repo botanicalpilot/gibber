@@ -1,10 +1,17 @@
 import { elements } from './base';
+import * as searchView from './searchView';
 
-
+export const splitDate = rawDate => {
+    let current = new Date()
+    let year  = current.getFullYear()
+    return rawDate.replace('T00:00:00.000Z', '').replace("2020", year).split('-').reverse().join('-')
+}
 
 export const renderItem = (growingChoice, crop) => {
+    // startDate = splitDate(crop.start)
+    // endDate = splitDate(crop.end)
     let markup = `
-        <li class="crop__item">
+        <li class="crop__item" data-itemid=${crop.id}>
             <div class="crop">${crop.title}
                 <div class="growingChoice">${growingChoice}</div>
                 <div class="cropDates">${crop.start} - ${crop.end}
