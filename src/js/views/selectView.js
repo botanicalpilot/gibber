@@ -1,11 +1,7 @@
 import { elements } from './base';
 import * as searchView from './searchView';
 
-export const splitDate = rawDate => {
-    let current = new Date()
-    let year  = current.getFullYear()
-    return rawDate.replace('T00:00:00.000Z', '').replace("2020", year).split('-').reverse().join('-')
-}
+
 
 export const renderItem = (growingChoice, crop) => {
     // startDate = splitDate(crop.start)
