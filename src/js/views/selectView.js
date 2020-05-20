@@ -8,7 +8,8 @@ export const renderItem = (growingChoice, crop) => {
     // endDate = splitDate(crop.end)
     let markup = `
         <li class="crop__item" data-itemid=${crop.id}>
-            <div class="crop">${crop.title}
+            <div class="crop">
+                <div class="cropTitle">${crop.title}</div>
                 <div class="growingChoice">${growingChoice}</div>
                 <div class="cropDates">${crop.start} - ${crop.end}
                 </div>
