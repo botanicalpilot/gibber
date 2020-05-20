@@ -158,8 +158,8 @@ const controlSelect = growingChoice => {
         if (!state.startSelection) state.startSelection = new Select();
 
         // add crop to the selection
-            const startItem = state.startSelection.addItem(state.crop.common, state.crop.scientific, state.crop.startStart, state.crop.startEnd, '#D9A168');
-            console.log(startItem);
+            const startItem = state.startSelection.addItem(state.crop.common, state.crop.scientific, state.crop.startBegin, state.crop.startEnd, '#D9A168');
+            console.log(state.crop.startStart);
             selectView.renderItem(growingChoice, startItem);
             calendar.createSchedules([startItem]);
     }

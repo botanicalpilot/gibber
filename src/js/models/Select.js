@@ -18,8 +18,8 @@ export default class Select {
             title: common, 
             category: 'time',
             dueDateClass:'',
-            start, 
-            end, 
+            start: start, 
+            end: end, 
             bgColor: color,
         }
         this.crops.push(item);
