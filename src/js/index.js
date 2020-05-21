@@ -22,6 +22,23 @@ import {addToCalendar} from '../../node_modules/js-add-to-calendar-buttons';
 const state = {};
 
 /*
+On load, automatically return all results from API
+*/
+window.onload = async () => {
+    state.search = new Search();
+        renderLoader(elements.searchRes)
+        try{
+            await state.search.resultsOnLoad();
+            clearLoader();
+            searchView.renderResults(state.search.result);
+            
+        } catch(error) {
+            console.log(error)
+            alert(`Something went wrong.`)
+        }
+}
+
+/*
 Search Controller for crops
 */
 const controlSearch = async () => {
@@ -40,7 +57,7 @@ const controlSearch = async () => {
             console.log(error)
             alert(`Something went wrong with your search. See error in console.`)
         }
-    }
+    } 
 }
 
 const controlCrop = async () => {

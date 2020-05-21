@@ -5,6 +5,18 @@ export default class Search {
     //     this.query = query;
     // }
 
+    async resultsOnLoad() {
+        try{
+            const res = await axios.get(`https://thallus-api.herokuapp.com/api/crops?common_name=`);
+            
+            // if res returns empty array, try again by searching with scientific name. 
+            this.result = res.data;
+
+        }catch (error) {
+            console.log(error)
+            alert(error) 
+        }
+    }
     async getResults(query) {
         try{
             console.log(`query: ${query}`)
