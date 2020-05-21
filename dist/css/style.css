@@ -268,11 +268,11 @@ a{
   flex-wrap: wrap;
   
 }
-.crop__delete{
+.cropButtons{
   /* background-image: linear-gradient(to right, transparent 0%, #fff 40%, #fff 100%);
   width: 3.75rem; */
-  /* visibility: hidden;
-  opacity: 0; */
+  visibility: hidden;
+  opacity: 0;
   transition: all .5s; }
 
 .crop{
@@ -286,7 +286,7 @@ a{
 .crop {
   width: 46vw;
 }
-.crop:hover .indoor__delete {
+.crop:hover .cropButtons {
   opacity: 1;
   visibility: visible;
 }
