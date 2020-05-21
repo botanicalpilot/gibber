@@ -284,7 +284,7 @@ a{
 }
 
 .crop {
-  width: 50vw;
+  width: 46vw;
 }
 .crop:hover .indoor__delete {
   opacity: 1;
@@ -295,9 +295,13 @@ a{
   opacity: 1;
   visibility: visible; }
 
-.cropTitle, .growingChoice, .cropDates, .cropButtons{
+.cropTitle, .growingChoice, .cropButtons{
   flex: 1;
+  align-content: center;
 } 
+.cropDates{
+  flex: 3;
+}
 
 #heading-2{
   font-family: 'Open Sans', sans-serif;

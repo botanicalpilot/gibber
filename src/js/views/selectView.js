@@ -1,8 +1,6 @@
 import { elements } from './base';
 import * as searchView from './searchView';
 
-
-
 export const renderItem = (growingChoice, crop) => {
     // startDate = splitDate(crop.start)
     // endDate = splitDate(crop.end)
@@ -13,11 +11,15 @@ export const renderItem = (growingChoice, crop) => {
                 <div class="growingChoice">${growingChoice}</div>
                 <div class="cropDates">${crop.start} - ${crop.end}
                 </div>
-                <button class="crop__delete btn-tiny">
-                    <svg>
-                        <use href="img/icons.svg#icon-circle-with-cross"></use>
-                    </svg>
-                </button>
+                <div class="cropButtons">
+                    <button class="crop__delete btn-tiny">
+                        <svg>
+                            <use href="img/icons.svg#icon-circle-with-cross"></use>
+                        </svg>
+                    </button>
+                    <div class=".new-cal" data-calid=${crop.id}></div>
+                </div>
+                
             </div>
         </li>
         
