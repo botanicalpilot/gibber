@@ -106,33 +106,50 @@ const renderCrop = crop => {
 
     const markup = `
     <li>
-    <a class="results__link" href="#${crop.id}">
-        <button class="results__data">
-            <div id="cn_style">${crop.common_name}</div><br>
-            <div id="sn_style">${crop.scientific_name}</div>
-        </button>
-        <div class="results__panel">
-            ${cropBoolean} 
-            <div class="results__dates">
-                <div class=${indoorClass}>
-                    <p>Sow Indoor Start: ${cropIndoorStart}</p>
-                    <p>Sow Indoor End: ${cropIndoorEnd}</p>
-                    <button class="indoorAdd">add</button>
+        <a class="results__link" href="#${crop.id}">
+            <div class="results__data">
+                <div class="resultsTitle">
+                    <div id="cn_style">${crop.common_name}</div><br>
+                    <div id="sn_style">${crop.scientific_name}</div>
                 </div>
-                <div class="${outdoorClass}">
-                    <p>Sow Outdoor Start:<br> ${cropSowStart}</p>
-                    <p>Sow Outdoor End: ${cropSowEnd}</p>
-                    <button class="sowAdd">add</button>
-                </div>
-                <div class="${startClass}">
-                    <p>Plant Starts Outdoor: ${startBegin}</p>
-                    <p>Plant Starts Outdoor End: ${startEnd}
-                    <button class="startAdd">add</button>
+                <div class="resultsButtons">
+                    <div class="${indoorClass}"><button class="indoorAdd"> Indoor add</button></div>
+                    <div class="${outdoorClass}"><button class="sowAdd">add</button></div>
+                    <div class="${startClass}"><button class="startAdd">add</button></div>
                 </div>
             </div>
-        </div>
-    </a>
-</li>`;
+        </a>
+    </li>`;
+
+
+//     <li>
+//     <a class="results__link" href="#${crop.id}">
+//         <button class="results__data">
+//             <div id="cn_style">${crop.common_name}</div><br>
+//             <div id="sn_style">${crop.scientific_name}</div>
+//         </button>
+//         <div class="results__panel">
+//             ${cropBoolean} 
+//             <div class="results__dates">
+//                 <div class=${indoorClass}>
+//                     <p>Sow Indoor Start: ${cropIndoorStart}</p>
+//                     <p>Sow Indoor End: ${cropIndoorEnd}</p>
+//                     <button class="indoorAdd">add</button>
+//                 </div>
+//                 <div class="${outdoorClass}">
+//                     <p>Sow Outdoor Start:<br> ${cropSowStart}</p>
+//                     <p>Sow Outdoor End: ${cropSowEnd}</p>
+//                     <button class="sowAdd">add</button>
+//                 </div>
+//                 <div class="${startClass}">
+//                     <p>Plant Starts Outdoor: ${startBegin}</p>
+//                     <p>Plant Starts Outdoor End: ${startEnd}
+//                     <button class="startAdd">add</button>
+//                 </div>
+//             </div>
+//         </div>
+//     </a>
+// </li>`;
 
 elements.searchResList.insertAdjacentHTML('beforeend', markup);
 
