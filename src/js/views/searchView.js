@@ -112,10 +112,28 @@ const renderCrop = crop => {
                     <div id="cn_style">${crop.common_name}</div><br>
                     <div id="sn_style">${crop.scientific_name}</div>
                 </div>
-                <div class="resultsButtons">
-                    <div class="${indoorClass}"><button class="indoorAdd"> Indoor add</button></div>
-                    <div class="${outdoorClass}"><button class="sowAdd">add</button></div>
-                    <div class="${startClass}"><button class="startAdd">add</button></div>
+                    <div class="resultsButtons">
+                        <div class="${indoorClass}">
+                                <button class="crop__delete btn-tiny">
+                                    <svg>
+                                        <use href="img/icons.svg#icon-circle-with-plus"></use>
+                                    </svg>
+                                </button>
+                        </div>
+                        <div class="${outdoorClass}">
+                            <button class="crop__delete btn-tiny">
+                                <svg>
+                                    <use href="img/icons.svg#icon-circle-with-plus"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="${startClass}">
+                            <button class="crop__delete btn-tiny">
+                                <svg>
+                                    <use href="img/icons.svg#icon-circle-with-plus"></use>
+                                </svg>
+                            </button>
+                        </div>
                 </div>
             </div>
         </a>
