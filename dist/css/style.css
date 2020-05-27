@@ -205,13 +205,15 @@ a{
 .results__data{
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 500px;
   width: 100%;
   height: 10vh;
 }
 
 .resultsButtons{
+  display: flex;
+  align-items: flex-start;
   
 }
 

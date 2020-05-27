@@ -114,21 +114,21 @@ const renderCrop = crop => {
                 </div>
                     <div class="resultsButtons">
                         <div class="${indoorClass}">
-                                <button class="crop__delete btn-tiny">
-                                    <svg>
-                                        <use href="img/icons.svg#icon-circle-with-plus"></use>
-                                    </svg>
-                                </button>
+                            <button class="indoorAdd btn-tiny">
+                                <svg>
+                                    <use href="img/icons.svg#icon-circle-with-plus"></use>
+                                </svg>
+                            </button>
                         </div>
                         <div class="${outdoorClass}">
-                            <button class="crop__delete btn-tiny">
+                            <button class="sowAdd btn-tiny">
                                 <svg>
                                     <use href="img/icons.svg#icon-circle-with-plus"></use>
                                 </svg>
                             </button>
                         </div>
                         <div class="${startClass}">
-                            <button class="crop__delete btn-tiny">
+                            <button class="startAdd btn-tiny">
                                 <svg>
                                     <use href="img/icons.svg#icon-circle-with-plus"></use>
                                 </svg>
