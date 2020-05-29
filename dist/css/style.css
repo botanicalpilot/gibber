@@ -327,6 +327,14 @@ a{
 #calendarHeader{
   font-family: 'BioRhyme', serif;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10 vh;
+}
+
+.moveMonthButton{
+  margin-top: 100px;
 }
 
 #calendar{
