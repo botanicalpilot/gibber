@@ -7,9 +7,11 @@ export const elements = {
     cropSelection: document.querySelector('.crop_selection'),
     sowSelection: document.querySelector('.sow_selection'),
     startSelection: document.querySelector('.start_selection'),
-    indoorAdd: document.querySelector('.indoorAdd'),
     calendarMonth: document.querySelector('#calendarMonth'),
-    calendarButtonInsert: document.querySelector('.new-cal')
+    calendarButtonInsert: document.querySelector('.new-cal'),
+    indoorAddButton: document.querySelector('.indoorAdd'),
+    sowAddButton: document.querySelector('.sowAdd'),
+    startAddButton: document.querySelector('.startAdd'),
 }
 
 

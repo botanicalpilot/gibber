@@ -120,7 +120,7 @@ const controlSelect = growingChoice => {
 
         // add crop to the selection
             const indoorItem = state.IndoorSelection.addItem(state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd, '#8C5866');
-            console.log(state.crop.indoorStart);
+            console.log(indoorItem);
             selectView.renderItem(growingChoice, indoorItem);
             calendar.createSchedules([indoorItem]);
 
@@ -167,7 +167,6 @@ const controlSelect = growingChoice => {
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
             });
-            console.log(sowItem.id)
             document.querySelector(`[data-calid=${sowItem.id}]`).appendChild(myCalendar);
             
 
@@ -177,7 +176,7 @@ const controlSelect = growingChoice => {
 
         // add crop to the selection
             const startItem = state.startSelection.addItem(state.crop.common, state.crop.scientific, state.crop.startBegin, state.crop.startEnd, '#D9A168');
-            console.log(state.crop.startStart);
+            console.log(startItem);
             selectView.renderItem(growingChoice, startItem);
             calendar.createSchedules([startItem]);
 
@@ -263,17 +262,24 @@ elements.searchForm.addEventListener('submit', e => {
 // Handle button clicks to select crops
 elements.searchRes.addEventListener('click', e => {
     if(e.target.matches ('.indoorAdd')){
+        console.log(state.crop)
+        console.log("bitch")
         controlSelect('indoor');
             
     } else if (e.target.matches ('.sowAdd')){
+        console.log(state.crop)
         controlSelect('sow');
         
     } else if(e.target.matches ('.startAdd')){
+        console.log(state.crop)
         controlSelect('start');
         
 
     }
 });
+
+
+
 
 
 

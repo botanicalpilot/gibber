@@ -10,7 +10,7 @@ export default class Select {
             // let current = new Date()
             // let year  = current.getFullYear()
             // return rawDate.replace("2020", year)
-        
+        console.log("addItem model was ran!")
 
         const item = {
             id: uniqid(),

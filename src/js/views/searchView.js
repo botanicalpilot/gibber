@@ -114,22 +114,22 @@ const renderCrop = crop => {
                 </div>
                     <div class="resultsButtons">
                         <div class="${indoorClass}">
-                            <button class="indoorAdd btn-tiny">
-                                <svg>
+                            <button class="btn-tiny">
+                                <svg class="indoorAdd">
                                     <use href="img/icons.svg#icon-circle-with-plus"></use>
                                 </svg>
                             </button>
                         </div>
                         <div class="${outdoorClass}">
-                            <button class="sowAdd btn-tiny">
-                                <svg>
+                            <button class="btn-tiny">
+                                <svg class="sowAdd">
                                     <use href="img/icons.svg#icon-circle-with-plus"></use>
                                 </svg>
                             </button>
                         </div>
                         <div class="${startClass}">
-                            <button class="startAdd btn-tiny">
-                                <svg>
+                            <button class="btn-tiny">
+                                <svg class="startAdd">
                                     <use href="img/icons.svg#icon-circle-with-plus"></use>
                                 </svg>
                             </button>
@@ -178,5 +178,5 @@ elements.searchResList.insertAdjacentHTML('beforeend', markup);
 export const renderResults = crops => {
     console.log(crops)
     crops.forEach(renderCrop)
-    buildAccordion()
+    // buildAccordion()
 }
