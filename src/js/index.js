@@ -221,38 +221,6 @@ elements.cropSelection.addEventListener('click', e => {
    }
 });
 
-// delete sow selection crops
-// elements.sowSelection.addEventListener('click', e => {
-//     const id = e.target.closest('.sow__item').dataset.itemid;
-
-//     // handle delete event
-//     if(e.target.matches('.sow__delete, .sow__delete *')) {
-//         // delete from state
-//         calendar.deleteSchedule(id, 1);
-//         state.sowSelection.deleteItem(id);
-
-//         // delete from UI
-//         selectView.deleteItem(id);
-//    }
-// });
-
-// delete start selection crops
-// elements.startSelection.addEventListener('click', e => {
-//     const id = e.target.closest('.start__item').dataset.itemid;
-
-//     // handle delete event
-//     if(e.target.matches('.start__delete, .start__delete *')) {
-//         // delete from state
-//         calendar.deleteSchedule(id, 1);
-//         state.startSelection.deleteItem(id);
-
-//         // delete from UI
-//         selectView.deleteItem(id);
-//    }
-// });
-
-
-
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -266,7 +234,6 @@ elements.searchRes.addEventListener('click', e => {
     let startButton = e.target.closest('.startAdd')
     if(addButton){
         console.log(state.crop)
-        console.log("bitch")
         controlSelect('indoor');
             
     } else if (sowButton){
