@@ -261,16 +261,19 @@ elements.searchForm.addEventListener('submit', e => {
 
 // Handle button clicks to select crops
 elements.searchRes.addEventListener('click', e => {
-    if(e.target.matches ('.indoorAdd')){
+    let addButton = e.target.closest('.indoorAdd')
+    let sowButton  = e.target.closest('.sowAdd')
+    let startButton = e.target.closest('.startAdd')
+    if(addButton){
         console.log(state.crop)
         console.log("bitch")
         controlSelect('indoor');
             
-    } else if (e.target.matches ('.sowAdd')){
+    } else if (sowButton){
         console.log(state.crop)
         controlSelect('sow');
         
-    } else if(e.target.matches ('.startAdd')){
+    } else if(startButton){
         console.log(state.crop)
         controlSelect('start');
         
