@@ -9,8 +9,6 @@ export const renderItem = (growingChoice, crop) => {
             <div class="crop">
                 <div class="cropTitle">${crop.title}</div>
                 <div class="growingChoice">${growingChoice}</div>
-                <div class="cropDates">${crop.start} - ${crop.end}
-                </div>
                 <div class="cropButtons">
                     <button class="crop__delete btn-tiny">
                         <svg>

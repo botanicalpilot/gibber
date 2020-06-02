@@ -157,8 +157,7 @@ const renderCrop = crop => {
     <li>
     <a class="results__link" href="#${crop.id}">
         <button class="results__data">
-            <div id="cn_style">${crop.common_name}</div><br>
-            <div id="sn_style">${crop.scientific_name}</div>
+            <div id="cn_style">${crop.common_name}<br>${crop.scientific_name}</div>
         </button>
         <div class="results__panel">
             ${cropBoolean} 
@@ -166,17 +165,29 @@ const renderCrop = crop => {
                 <div class=${indoorClass}>
                     <p>Sow Indoor Start: ${cropIndoorStart}</p>
                     <p>Sow Indoor End: ${cropIndoorEnd}</p>
-                    <button class="indoorAdd">add</button>
+                    <button class="btn-inline">
+                        <svg class="indoorAdd">
+                            <use href="img/icons.svg#icon-circle-with-plus"></use>
+                        </svg>
+                    </button>
                 </div>
                 <div class="${outdoorClass}">
                     <p>Sow Outdoor Start:<br> ${cropSowStart}</p>
                     <p>Sow Outdoor End: ${cropSowEnd}</p>
-                    <button class="sowAdd">add</button>
+                    <button class="btn-inline">
+                        <svg class="sowAdd">
+                            <use href="img/icons.svg#icon-circle-with-plus"></use>
+                        </svg>
+                    </button>
                 </div>
                 <div class="${startClass}">
                     <p>Plant Starts Outdoor: ${startBegin}</p>
-                    <p>Plant Starts Outdoor End: ${startEnd}
-                    <button class="startAdd">add</button>
+                    <p>Plant Starts Outdoor End: ${startEnd}</p>
+                    <button class="btn-inline">
+                        <svg class="startAdd">
+                            <use href="img/icons.svg#icon-circle-with-plus"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
