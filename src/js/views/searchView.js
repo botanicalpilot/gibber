@@ -165,30 +165,32 @@ const renderCrop = crop => {
                 <div class=${indoorClass}>
                     <p>Sow Indoor Start: ${cropIndoorStart}</p>
                     <p>Sow Indoor End: ${cropIndoorEnd}</p>
-                    <button class="btn-inline">
-                        <svg class="indoorAdd">
-                            <use href="img/icons.svg#icon-circle-with-plus"></use>
-                        </svg>
-                    </button>
                 </div>
                 <div class="${outdoorClass}">
                     <p>Sow Outdoor Start:<br> ${cropSowStart}</p>
                     <p>Sow Outdoor End: ${cropSowEnd}</p>
-                    <button class="btn-inline">
-                        <svg class="sowAdd">
-                            <use href="img/icons.svg#icon-circle-with-plus"></use>
-                        </svg>
-                    </button>
                 </div>
                 <div class="${startClass}">
                     <p>Plant Starts Outdoor: ${startBegin}</p>
                     <p>Plant Starts Outdoor End: ${startEnd}</p>
-                    <button class="btn-inline">
-                        <svg class="startAdd">
-                            <use href="img/icons.svg#icon-circle-with-plus"></use>
-                        </svg>
-                    </button>
                 </div>
+            </div>
+            <div>
+                <button class="btn-tiny">
+                    <svg class="indoorAdd">
+                        <use href="img/icons.svg#icon-circle-with-plus"></use>
+                    </svg>
+                </button>
+                <button class="btn-tiny">
+                    <svg class="sowAdd">
+                        <use href="img/icons.svg#icon-circle-with-plus"></use>
+                    </svg>
+                </button>
+                <button class="btn-tiny">
+                    <svg class="startAdd">
+                        <use href="img/icons.svg#icon-circle-with-plus"></use>
+                    </svg>
+                </button>
             </div>
         </div>
     </a>
