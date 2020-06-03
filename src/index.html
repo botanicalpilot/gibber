@@ -94,26 +94,21 @@
                 </div>
                 <div class="calendarContainer">
                     <div id="calendarHeader">
-                        <!-- <span id="menu-navi">
-                            <button type="button" class="btn btn-default btn-sm move-day" data-action="move-prev">
-                                <i class="calendar-icon ic-arrow-line-left" data-action="move-prev"></i>
+                        <span id="menu-navi"> 
+                            <!-- <button type="button" class="btn btn-default btn-tiny move-today" data-action="move-today">Today</button>                    -->
+                            <button type="button" class="moveMonthButton btn-inline move-day" data-action="move-prev">
+                                <svg>
+                                    <use href="img/icons.svg#icon-triangle-left" data-action="move-prev"></use>
+                                </svg>
                             </button>
-                            <button type="button" class="btn btn-default btn-sm move-day" data-action="move-next">
-                                <i class="calendar-icon ic-arrow-line-right" data-action="move-next"></i>
+                            <!-- <div id="calendarMonth"></div> -->
+                            <button type="button" class="moveMonthButton btn-inline move-day" data-action="move-next">
+                                    <svg>
+                                        <use href="img/icons.svg#icon-triangle-right" data-action="move-next"></use>
+                                    </svg>
                             </button>
                         </span>
-                        <span id="renderRange" class="render-range"></span> -->
-                        <button class="moveMonthButton btn-inline">
-                            <svg>
-                                <use href="img/icons.svg#icon-triangle-left"></use>
-                            </svg>
-                        </button>
-                        <div id="calendarMonth"></div>
-                        <button class="moveMonthButton btn-inline">
-                                <svg>
-                                    <use href="img/icons.svg#icon-triangle-right"></use>
-                                </svg>
-                        </button>
+                    <span id="renderRange" class="render-range"></span>
                     </div>
                     <div id="calendar"></div>
                 </div>

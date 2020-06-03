@@ -41,7 +41,7 @@
     "html-webpack-plugin": "^4.2.0",
     "js-add-to-calendar-buttons": "^1.0.0",
     "lodash": "^4.17.15",
-    "tui-calendar": "^1.12.12",
+    "tui-calendar": "^1.12.13",
     "uniqid": "^5.2.0"
   }
 }
