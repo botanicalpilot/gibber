@@ -111,7 +111,7 @@ a{
   color: #8C5E51;
   font-size: 1.2rem;
   border: none;
-  background-color: #F9F5F3;
+  background-color: white;
   padding: .8rem 1.2rem;
   border-radius: 10rem;
   cursor: pointer;
@@ -127,7 +127,7 @@ a{
     margin: 0 .4rem; }
   .btn-inline:hover {
     color: #402118;
-    background-color: #F2EFEE; }
+    background-color: white; }
   .btn-inline:focus {
     outline: none; }
 
@@ -282,7 +282,7 @@ a{
   justify-content: space-evenly;
   align-items: center;
   flex: 1;
-  flex-wrap: wrap;
+  
 }
 
 .crop {

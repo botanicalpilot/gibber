@@ -3,7 +3,6 @@ import Select from './models/Select';
 import Crop from './models/Crop';
 import * as searchView from './views/searchView';
 import * as selectView from './views/selectView';
-import * as calendarButtons from './views/calendarButtons';
 import { elements, renderLoader, clearLoader } from './views/base';
 import Calendar from 'tui-calendar';
 import "tui-calendar/dist/tui-calendar.css";
@@ -124,7 +123,7 @@ const controlSelect = growingChoice => {
             selectView.renderItem(growingChoice, indoorItem);
             calendar.createSchedules([indoorItem]);
 
-            var myCalendar = addToCalendar({
+            var generateCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
                     id: state.crop.id                               // If you don't pass an id, one will be generated for you.
@@ -140,18 +139,17 @@ const controlSelect = growingChoice => {
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
             });
-            document.querySelector(`[data-calid=${indoorItem.id}]`).appendChild(myCalendar);
+            document.querySelector(`[data-calid="${indoorItem.id}"]`).appendChild(generateCalendarButtons);
     } else if(growingChoice === 'sow'){
         // create a new selection if there isn't any. 
         if (!state.sowSelection) state.sowSelection = new Select();
 
         // add crop to the selection
             const sowItem = state.sowSelection.addItem(state.crop.id, state.crop.common, state.crop.scientific, state.crop.sowStart, state.crop.sowEnd, '#518C7B');
-            console.log(sowItem);
             selectView.renderItem(growingChoice, sowItem); 
             calendar.createSchedules([sowItem]);
 
-            var myCalendar = addToCalendar({
+            var generateCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
                     id: state.crop.id,                              // If you don't pass an id, one will be generated for you.
@@ -167,7 +165,7 @@ const controlSelect = growingChoice => {
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
             });
-            document.querySelector(`[data-calid=${sowItem.id}]`).appendChild(myCalendar);
+            document.querySelector(`[data-calid=${sowItem.id}]`).appendChild(generateCalendarButtons);
             
 
     } else if(growingChoice === 'start'){
@@ -180,7 +178,7 @@ const controlSelect = growingChoice => {
             selectView.renderItem(growingChoice, startItem);
             calendar.createSchedules([startItem]);
 
-            var myCalendar = addToCalendar({
+            var generateCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
                     id: state.crop.id                               // If you don't pass an id, one will be generated for you.
@@ -196,7 +194,7 @@ const controlSelect = growingChoice => {
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
             });
-            document.querySelector(`[data-calid=${startItem.id}]`).appendChild(myCalendar);
+            document.querySelector(`[data-calid=${startItem.id}]`).appendChild(generateCalendarButtons);
     }
 }
 
