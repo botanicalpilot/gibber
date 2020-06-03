@@ -149,10 +149,10 @@ controllers for indoor, sow, and start selection populated by selections made fr
 const controlSelect = growingChoice => {
     if(growingChoice === 'indoor'){
         // create a new selection if there isn't any. 
-        if (!state.IndoorSelection) state.IndoorSelection = new Select();
+        if (!state.indoorSelection) state.indoorSelection = new Select();
 
         // add crop to the selection
-            const indoorItem = state.IndoorSelection.addItem(state.crop.id, state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd, '#8C5866');
+            const indoorItem = state.indoorSelection.addItem(state.crop.id, state.crop.common, state.crop.scientific, state.crop.indoorStart, state.crop.indoorEnd, '#8C5866');
             console.log(indoorItem);
             selectView.renderItem(growingChoice, indoorItem);
             calendar.createSchedules([indoorItem]);
@@ -246,8 +246,13 @@ elements.cropSelection.addEventListener('click', e => {
         // delete from state
         console.log(id)
         calendar.deleteSchedule(id, 1);
-        state.IndoorSelection.deleteItem(id);
-
+        if (state.indoorSelection) {
+            state.indoorSelection.deleteItem(id);
+        } else if (state.sowSelection) {
+            state.sowSelection.deleteItem(id);
+        } else {
+            state.startSelection.deleteItem(id);
+        }
         // delete from UI
         selectView.deleteItem(id);
    }
