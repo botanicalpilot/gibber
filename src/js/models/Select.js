@@ -6,14 +6,9 @@ export default class Select {
     }
 
     addItem(id, common, scientific, start, end, color) {
-        
-            // let current = new Date()
-            // let year  = current.getFullYear()
-            // return rawDate.replace("2020", year)
-        console.log("addItem model was ran!")
 
         const item = {
-            id: id,
+            id: uniqid(),
             calendarId: 1,
             title: common, 
             category: 'time',
