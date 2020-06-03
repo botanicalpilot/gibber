@@ -219,10 +219,6 @@ elements.cropSelection.addEventListener('click', e => {
         } else {
             state.startSelection.deleteItem(id);
         }
-        
-       
-       
-
         // delete from UI
         selectView.deleteItem(id);
    }
