@@ -259,6 +259,7 @@ a{
 .selection{
   flex: 1;
   overflow-y: scroll;
+  width: 50vw;
 }
 
 .crop__list{
@@ -286,7 +287,7 @@ a{
 }
 
 .crop {
-  width: 46vw;
+  width: 50vw;
 }
 .crop:hover .cropButtons {
   opacity: 1;
@@ -316,14 +317,22 @@ a{
   overflow: auto;
 }
 
-#menu-navi{
+#calendarHeader{
   font-family: 'BioRhyme', serif;
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: baseline;
-  height: 50px;
+  align-items:  center;
+  height: 75px;
+  background-image: linear-gradient(to right bottom, #518C7A, #1F4036);
+}#calendarMonth{
+  text-align: center;
+  color: white;
+  font-family: 'BioRhyme', serif;
+  font-size: 22px;
 }
+
+
 
 
 #calendar{
