@@ -5,7 +5,7 @@ export default class Select {
         this.crops = [];
     }
 
-    addItem(id, common, scientific, start, end, color) {
+    addItem(id, common, scientific, start, end, image, color) {
 
         const item = {
             id: uniqid(),
@@ -15,6 +15,7 @@ export default class Select {
             dueDateClass:'',
             start: start, 
             end: end, 
+            image:image,
             bgColor: color,
         }
         this.crops.push(item);
