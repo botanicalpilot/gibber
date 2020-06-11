@@ -76,7 +76,7 @@ a{
 /* start button styling */
 .btn, .btn-small, .btn-small:link, .btn-small:visited {
   background-image: linear-gradient(to right bottom, #8C5E51, #402118);
-  border-radius: 10rem;
+  border-radius: 2rem;
   border: none;
   text-transform: uppercase;
   color: #fff;
@@ -157,7 +157,7 @@ a{
 
 .search {
   background-color: #fff;
-  border-radius: 10rem;
+  border-radius: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,7 +172,7 @@ a{
     font-family: inherit;
     color: inherit;
     font-size: 1.7rem;
-    width: 30rem; }
+    width: 33rem; }
 .search__field:focus {
       outline: none; }
 .search__field::placeholder {
@@ -259,7 +259,7 @@ a{
 .selection{
   flex: 1;
   overflow-y: scroll;
-  width: 50vw;
+  width: 30vw;
 }
 
 .crop__list{
@@ -283,12 +283,9 @@ a{
   justify-content: space-evenly;
   align-items: center;
   flex: 1;
-  
+  width: 40vw;
 }
 
-.crop {
-  width: 50vw;
-}
 .crop:hover .cropButtons {
   opacity: 1;
   visibility: visible;
@@ -299,10 +296,10 @@ a{
   opacity: 1;
   visibility: visible; }
 
-img{
+.cropImage{
   border-radius: 60%;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   vertical-align: middle;
   background-repeat: no-repeat;
 

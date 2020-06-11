@@ -7,8 +7,8 @@ export const renderItem = (growingChoice, crop) => {
     let markup = `
         <li class="crop__item" data-itemid=${crop.id}>
             <div class="crop">
-                <figure class="cropImage">
-                    <img src="https://thallus-api.herokuapp.com/${crop.image}" alt="${crop.title}">
+                <figure>
+                    <img class="cropImage" src="https://thallus-api.herokuapp.com/${crop.image}" alt="${crop.title}">
                 </figure>
                 <div class="cropTitle">${crop.title}</div>
                 <div class="growingChoice">${growingChoice}</div>
