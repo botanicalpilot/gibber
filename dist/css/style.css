@@ -246,6 +246,12 @@ a{
   visibility: hidden;
 }
 
+.results__pages{
+  display: flex;
+  justify-content: space-between;
+
+}
+
 
 /* selections styling */
 .selection{

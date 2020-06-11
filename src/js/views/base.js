@@ -3,6 +3,7 @@ export const elements = {
     searchInput: document.querySelector('.search__field'),
     searchRes: document.querySelector('.results'),
     searchResList: document.querySelector('.results__list'),
+    searchResPages: document.querySelector('.results__pages'),
     accordionBtn: document.getElementsByClassName('results__data'),
     cropSelection: document.querySelector('.crop_selection'),
     sowSelection: document.querySelector('.sow_selection'),

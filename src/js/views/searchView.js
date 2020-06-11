@@ -10,6 +10,7 @@ export const clearInput = () => {
 };
 export const clearResults = () => {
     elements.searchResList.innerHTML = '';
+    elements.searchResPages.innerHTML = '';
 };
 
 // export const highlightSelected  = id => {
@@ -114,92 +115,82 @@ const renderCrop = crop => {
         startClass = 'start_outdoor_hide'
     }
 
-
-    
-
     const markup = 
-    // `
-    // <li>
-    //     <a class="results__link" href="#${crop.id}">
-    //         <div class="results__data">
-    //             <div class="resultsTitle">
-    //                 <div id="cn_style">${crop.common_name}</div><br>
-    //                 <div id="sn_style">${crop.scientific_name}</div>
-    //             </div>
-    //                 <div class="resultsButtons">
-    //                     <div class="${indoorClass}">
-    //                         <button class="btn-tiny">
-    //                             <svg class="indoorAdd">
-    //                                 <use href="img/icons.svg#icon-circle-with-plus"></use>
-    //                             </svg>
-    //                         </button>
-    //                     </div>
-    //                     <div class="${outdoorClass}">
-    //                         <button class="btn-tiny">
-    //                             <svg class="sowAdd">
-    //                                 <use href="img/icons.svg#icon-circle-with-plus"></use>
-    //                             </svg>
-    //                         </button>
-    //                     </div>
-    //                     <div class="${startClass}">
-    //                         <button class="btn-tiny">
-    //                             <svg class="startAdd">
-    //                                 <use href="img/icons.svg#icon-circle-with-plus"></use>
-    //                             </svg>
-    //                         </button>
-    //                     </div>
-    //             </div>
-    //         </div>
-    //     </a>
-    // </li>`;
+        `
+            <li>
+            <a class="results__link" href="#${crop.id}">
+                <button class="results__data">
+                    <div id="cn_style">${crop.common_name}<br>${crop.scientific_name}</div>
+                </button>
+                <div class="results__panel">
+                    ${cropBoolean} 
+                    <div class="results__dates">
+                        <div class=${indoorClass}>
+                            <p>Sow indoors <br>${cropIndoorStart} - <br>${cropIndoorEnd}</p>
+                            <button class="btn-inline">
+                            <svg class="indoorAdd">
+                                <use href="img/icons.svg#icon-circle-with-plus"></use>
+                            </svg>
+                        </button>
+                        </div>
+                        <div class="${outdoorClass}">
+                        <p>Sow outdoors <br>${cropSowStart} - <br>${cropSowEnd}</p>
+                        <button class="btn-inline">
+                            <svg class="sowAdd">
+                                <use href="img/icons.svg#icon-circle-with-plus"></use>
+                            </svg>
+                        </button>
+                        </div>
+                        <div class="${startClass}">
+                            <p>Plants Starts <br>${startBegin} - <br>${startEnd}</p>
+                            <button class="btn-inline">
+                            <svg class="startAdd">
+                                <use href="img/icons.svg#icon-circle-with-plus"></use>
+                            </svg>
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>`;
 
-`
-    <li>
-    <a class="results__link" href="#${crop.id}">
-        <button class="results__data">
-            <div id="cn_style">${crop.common_name}<br>${crop.scientific_name}</div>
-        </button>
-        <div class="results__panel">
-            ${cropBoolean} 
-            <div class="results__dates">
-                <div class=${indoorClass}>
-                    <p>Sow indoors <br>${cropIndoorStart} - <br>${cropIndoorEnd}</p>
-                    <button class="btn-inline">
-                    <svg class="indoorAdd">
-                        <use href="img/icons.svg#icon-circle-with-plus"></use>
-                    </svg>
-                </button>
-                </div>
-                <div class="${outdoorClass}">
-                <p>Sow outdoors <br>${cropSowStart} - <br>${cropSowEnd}</p>
-                <button class="btn-inline">
-                    <svg class="sowAdd">
-                        <use href="img/icons.svg#icon-circle-with-plus"></use>
-                    </svg>
-                </button>
-                </div>
-                <div class="${startClass}">
-                    <p>Plants Starts <br>${startBegin} - <br>${startEnd}</p>
-                    <button class="btn-inline">
-                    <svg class="startAdd">
-                        <use href="img/icons.svg#icon-circle-with-plus"></use>
-                    </svg>
-                </button>
-                </div>
-            </div>
-        </div>
-    </a>
-</li>`;
-
-elements.searchResList.insertAdjacentHTML('beforeend', markup);
+        elements.searchResList.insertAdjacentHTML('beforeend', markup);
 
 }
 
+const createButton = (page, type) => `
+    <button class="btn-inline results__btn--${type}" data-goto=${type === 'prev' ? page-1 : page + 1}></span>
+        <span>Page ${type==='prev' ? page - 1 : page + 1}</span>
+        <svg class="search__icon">
+            <use href="img/icons.svg#icon-triangle-${type === 'prev' ? 'left' : 'right'}"></use>
+        </svg>
+    </button>
+`
+
+const renderButtons = (page, numResults, resPerPage) => {
+    const pages = Math.ceil(numResults / resPerPage);
+    let button;
+    if(page === 1 && pages > 1 ){
+        button = createButton(page, 'next');
+    } else if (page < pages) {
+        button = `
+            ${createButton(page, 'prev')}
+            ${createButton(page, 'next')}
+        `;
+    } else if (page === pages && pages > 1) {
+        button = createButton(page, 'prev');
+    }
+    elements.searchResPages.insertAdjacentHTML('afterbegin', button);
+};
 
 
-export const renderResults = crops => {
-    console.log(crops)
-    crops.forEach(renderCrop)
+export const renderResults = (crops, page = 1, resPerPage = 10) => {
+    const start = (page - 1) * resPerPage;
+    const end = page * resPerPage;
+
+    crops.slice(start, end).forEach(renderCrop);
+
+    renderButtons(page, crops.length, resPerPage)
     buildAccordion()
     
 }
