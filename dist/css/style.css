@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   min-height: 100vh;
   position: static;
+  overflow-x:hidden;
 }
 
 body {
@@ -21,17 +22,6 @@ a{
   text-decoration: none;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: auto;
-  justify-content: center;
-  overflow-y: scroll;
-  background-color: #fff;
-  border-radius: 6px;
-  margin: 6vw auto;
-}
 
 
 /* header styling */
@@ -52,6 +42,7 @@ a{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-top: 35px;
 }
 
 .headerTitle h1{
@@ -60,7 +51,6 @@ a{
   font-family: 'BioRhyme', serif;
 
 }
-
 
 #headerLogo{
   flex: 1;
@@ -197,6 +187,7 @@ a{
 .results{
   flex:1;
   overflow-y: scroll;
+  background-color: #fff;
 }
 
 .results__data{
@@ -227,6 +218,7 @@ a{
 .results__panel{
   display: none;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .results__dates{
@@ -260,6 +252,7 @@ a{
   flex: 1;
   overflow-y: scroll;
   width: 30vw;
+  background-color: #fff;
 }
 
 .crop__list{
