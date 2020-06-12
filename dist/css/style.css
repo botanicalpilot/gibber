@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-  background-image: linear-gradient(to right bottom, #518C7A, #1F4036);
+  background-image: linear-gradient(to right bottom, #518C7A, #8C5E51,#1F4036,  #402118 );
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -34,7 +34,7 @@ a{
   align-items: center;
   width: 100vw;
   
-  background-image: linear-gradient(to right bottom, #518C7A, #1F4036);
+  background-image: linear-gradient(to right bottom, #518C7A 15%, #8C5E51,#1F4036);
 }
 
 .headerTitle{
@@ -49,13 +49,18 @@ a{
   flex:1;
   color: white;
   font-family: 'Miniver', cursive;
+  font-size: 40px;
+  text-shadow: 0.5px 0.5px 0.5px black;
 
 }
 
 #headerLogo{
   flex: 1;
-  height:15vh;
+  height:20vh;
+  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(1px 1px 1px black);
 }
+  
 
 .headerForm {
   flex: 1;
@@ -153,7 +158,10 @@ a{
   align-items: center;
   justify-content: center;
   padding-left: 3rem;
-  transition: all .3s; }
+  transition: all .3s; 
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+   filter: drop-shadow(5px 5px 5px #222)
+}
 .search:focus-within {
     transform: translateY(-2px);
     box-shadow: 0 0.7rem 3rem rgba(101, 90, 86, 0.08); }
@@ -163,7 +171,9 @@ a{
     font-family: 'Lato', sans-serif;
     color: inherit;
     font-size: 1.7rem;
-    width: 33rem; }
+    width: 33rem;
+    ;
+  }
 .search__field:focus {
       outline: none; }
 .search__field::placeholder {
@@ -331,13 +341,16 @@ a{
   display: flex;
   justify-content: center;
   align-items:  center;
-  height: 75px;
-  background-image: linear-gradient(to right bottom, #518C7A, #1F4036);
-}#calendarMonth{
+  height: 100px;
+  background-image: linear-gradient(to right bottom, #518C7A 15%, #8C5E51,#1F4036);
+}
+
+#calendarMonth{
   text-align: center;
   color: white;
   font-family: 'Miniver', cursive;
-  font-size: 22px;
+  font-size: 30px;
+  text-shadow: 0.5px 0.5px 0.5px black;
 }
 
 #calendar{
