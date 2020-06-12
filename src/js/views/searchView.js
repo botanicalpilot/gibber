@@ -179,7 +179,8 @@ const renderButtons = (page, numResults, resPerPage) => {
         `;
     } else if (page === pages && pages > 1) {
         button = createButton(page, 'prev');
-    }
+    } 
+    console.log(page)
     elements.searchResPages.insertAdjacentHTML('afterbegin', button);
 };
 
@@ -189,8 +190,9 @@ export const renderResults = (crops, page = 1, resPerPage = 10) => {
     const end = page * resPerPage;
 
     crops.slice(start, end).forEach(renderCrop);
-
-    renderButtons(page, crops.length, resPerPage)
+    if(crops.length > 9){
+        renderButtons(page, crops.length, resPerPage)
+    }
     buildAccordion()
     
 }
