@@ -59,7 +59,38 @@ export const clearAccordion = () => {
 export const splitDate = rawDate => {
     let current = new Date()
     let year  = current.getFullYear()
-    return rawDate.replace('T00:00:00.000Z', '').replace("2020", year).split('-').reverse().join('-')
+    // 
+    let numDate = rawDate.replace('T00:00:00.000Z', '').replace("2020", year).split('-').reverse().join('-')
+
+    let m1 = numDate.charAt(3)
+    let m2 = numDate.charAt(4)
+    let month;
+    if(m1 === '0'){
+        month = parseInt(m2)
+    } else if (m1 === '1'){
+        month = parseInt(m1.concat(m2))
+    }
+    console.log(numDate)
+    console.log(`-${m1}${m2}-`)
+    console.log(month)
+
+    const monthKey = new Array();
+    monthKey[0] = "Jan";
+    monthKey[1] = "Feb";
+    monthKey[2] = "Mar";
+    monthKey[3] = "Apr";
+    monthKey[4] = "May";
+    monthKey[5] = "Jun";
+    monthKey[6] = "Jul";
+    monthKey[7] = "Aug";
+    monthKey[8] = "Sept";
+    monthKey[9] = "Oct";
+    monthKey[10] = "Nov";
+    monthKey[11] = "Dec";
+
+    let currentMonth = monthKey[month]
+
+    return numDate.replace(`-${m1}${m2}-`, ` ${currentMonth} `)
 }
 
 
