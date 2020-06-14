@@ -38,6 +38,14 @@ window.onload = async () => {
 }
 
 /*
+Add date prototype to increment a day went converting dates from API and sending to calendar
+*/
+const dateFormat = date => {
+    return searchView.splitDate(date).split('-').reverse().join('-').concat(' 00:00:00')
+}
+
+
+/*
 Search Controller for crops
 */
 const controlSearch = async () => {
@@ -86,33 +94,6 @@ elements.searchResPages.addEventListener('click', e => {
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlCrop));
 
 
-/*
-Calendar Controller
-*/
-let dateMonth = new Date();
-const month = new Array();
-month[0] = "January";
-month[1] = "February";
-month[2] = "March";
-month[3] = "April";
-month[4] = "May";
-month[5] = "June";
-month[6] = "July";
-month[7] = "August";
-month[8] = "September";
-month[9] = "October";
-month[10] = "November";
-month[11] = "December";
-let currentMonth = month[dateMonth.getMonth()];
-
-elements.calendarMonth.insertAdjacentHTML('afterbegin', currentMonth)
-var calendar = new Calendar('#calendar', {
-    defaultView: 'month',
-    taskView: true,
-    // template: MONTHLY_CUSTOM_THEME
-    
-});
-
 
 
 /*
@@ -137,9 +118,9 @@ const controlSelect = growingChoice => {
                 },
                 data: {
                     title: `Start ${state.crop.common} from seed indoors`,     // Event title
-                    start: new Date(state.crop.indoorStart),   // Event start date
+                    start: new Date(dateFormat(state.crop.indoorStart)),   // Event start date
                     // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
-                    end: new Date(state.crop.indoorEnd),     // If an end time is set, this will take precedence over duration
+                    end: new Date(dateFormat(state.crop.indoorEnd)),     // If an end time is set, this will take precedence over duration
                     // duration: 120,                            // Event duration (IN MINUTES)
                     // allday: true,													// Override end time, duration and timezone, triggers 'all day'
                     address: 'Portland, OR, USA',
@@ -155,7 +136,9 @@ const controlSelect = growingChoice => {
             const sowItem = state.sowSelection.addItem(state.crop.id, state.crop.common, state.crop.scientific, state.crop.sowStart, state.crop.sowEnd, state.crop.photo_ref, '#518C7B');
             selectView.renderItem(growingChoice, sowItem); 
             calendar.createSchedules([sowItem]);
-
+            console.log(`splitdate with date ${new Date('2019-08-05')}`)
+            console.log(`splitdate ${new Date(dateFormat(state.crop.sowStart))}`)
+            
             var generateCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
@@ -163,9 +146,9 @@ const controlSelect = growingChoice => {
                 },
                 data: {
                     title: `Start ${state.crop.common} from seed indoors`,     // Event title
-                    start: new Date(state.crop.indoorStart),   // Event start date
+                    start: new Date(dateFormat(state.crop.sowStart)),   // Event start date
                     // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
-                    end: new Date(state.crop.indoorEnd),     // If an end time is set, this will take precedence over duratin
+                    end: new Date(dateFormat(state.crop.sowEnd)),     // If an end time is set, this will take precedence over duratin
                     // duration: 120,                            // Event duration (IN MINUTES)
                     // allday: true,													// Override end time, duration and timezone, triggers 'all day'
                     address: 'Portland, OR, USA',
@@ -191,10 +174,10 @@ const controlSelect = growingChoice => {
                     id: state.crop.id                               // If you don't pass an id, one will be generated for you.
                 },
                 data: {
-                    title: `Start ${state.crop.common} from seed indoors`,     // Event title
-                    start: new Date(state.crop.indoorStart),   // Event start date
+                    title: `Plant ${state.crop.common} starts`,     // Event title
+                    start: new Date(dateFormat(state.crop.startBegin)),   // Event start date
                     // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
-                    end: new Date(state.crop.indoorEnd),     // If an end time is set, this will take precedence over duration
+                    end: new Date(dateFormat(state.crop.startEnd)),     // If an end time is set, this will take precedence over duration
                     // duration: 120,                            // Event duration (IN MINUTES)
                     // allday: true,													// Override end time, duration and timezone, triggers 'all day'
                     address: 'Portland, OR, USA',
@@ -204,10 +187,6 @@ const controlSelect = growingChoice => {
             document.querySelector(`[data-calid=${startItem.id}]`).appendChild(generateCalendarButtons);
     }
 }
-
-
-
-
 
 
 // handle delete events for selected indoor crops
@@ -253,6 +232,35 @@ elements.searchRes.addEventListener('click', e => {
         controlSelect('start');
     }
 });
+
+
+/*
+Calendar Controller
+*/
+let dateMonth = new Date();
+const month = new Array();
+month[0] = "January";
+month[1] = "February";
+month[2] = "March";
+month[3] = "April";
+month[4] = "May";
+month[5] = "June";
+month[6] = "July";
+month[7] = "August";
+month[8] = "September";
+month[9] = "October";
+month[10] = "November";
+month[11] = "December";
+let currentMonth = month[dateMonth.getMonth()];
+
+elements.calendarMonth.insertAdjacentHTML('afterbegin', currentMonth)
+var calendar = new Calendar('#calendar', {
+    defaultView: 'month',
+    taskView: true,
+    // template: MONTHLY_CUSTOM_THEME
+    
+});
+
 
 
 

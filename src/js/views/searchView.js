@@ -60,7 +60,10 @@ export const splitDate = rawDate => {
     let current = new Date()
     let year  = current.getFullYear()
     // 
-    let numDate = rawDate.replace('T00:00:00.000Z', '').replace("2020", year).split('-').reverse().join('-')
+    return rawDate.replace('T00:00:00.000Z', '').replace("2020", year).split('-').reverse().join('-')
+}
+
+const monthFormat = numDate => {
 
     let m1 = numDate.charAt(3)
     let m2 = numDate.charAt(4)
@@ -70,9 +73,6 @@ export const splitDate = rawDate => {
     } else if (m1 === '1'){
         month = parseInt(m1.concat(m2))
     }
-    console.log(numDate)
-    console.log(`-${m1}${m2}-`)
-    console.log(month)
 
     const monthKey = new Array();
     monthKey[0] = "Jan";
@@ -109,8 +109,8 @@ const renderCrop = crop => {
     let cropIndoorEnd = ''
     let indoorClass = ''
     if(crop.sow_indoor_start && crop.sow_indoor_end != null){
-        cropIndoorStart = splitDate(crop.sow_indoor_start)
-        cropIndoorEnd = splitDate(crop.sow_indoor_end)
+        cropIndoorStart = monthFormat(splitDate(crop.sow_indoor_start))
+        cropIndoorEnd = monthFormat(splitDate(crop.sow_indoor_end))
         indoorClass = 'sow_indoor'
     } else {
         cropIndoorStart = crop.sow_indoor_start
@@ -123,8 +123,8 @@ const renderCrop = crop => {
     let cropSowEnd = ''
     let outdoorClass = ''
     if(crop.sow_outdoor_start && crop.sow_outdoor_end != null){
-        cropSowStart = splitDate(crop.sow_outdoor_start)
-        cropSowEnd = splitDate(crop.sow_outdoor_end)
+        cropSowStart = monthFormat(splitDate(crop.sow_outdoor_start))
+        cropSowEnd = monthFormat(splitDate(crop.sow_outdoor_end))
         outdoorClass = 'sow_outdoor'
     } else {
         cropSowStart = crop.sow_outdoor_start
@@ -137,8 +137,8 @@ const renderCrop = crop => {
     let startEnd = ''
     let startClass = ''
     if(crop.start_outdoor_start && crop.start_outdoor_end != null){
-        startBegin = splitDate(crop.start_outdoor_start)
-        startEnd = splitDate(crop.start_outdoor_end)
+        startBegin = monthFormat(splitDate(crop.start_outdoor_start))
+        startEnd = monthFormat(splitDate(crop.start_outdoor_end))
         startClass = 'start_outdoor'
     } else {
         startBegin = crop.start_outdoor_start
