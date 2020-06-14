@@ -75,18 +75,18 @@ const monthFormat = numDate => {
     }
 
     const monthKey = new Array();
-    monthKey[0] = "Jan";
-    monthKey[1] = "Feb";
-    monthKey[2] = "Mar";
-    monthKey[3] = "Apr";
-    monthKey[4] = "May";
-    monthKey[5] = "Jun";
-    monthKey[6] = "Jul";
-    monthKey[7] = "Aug";
-    monthKey[8] = "Sept";
-    monthKey[9] = "Oct";
-    monthKey[10] = "Nov";
-    monthKey[11] = "Dec";
+    monthKey[1] = "Jan";
+    monthKey[2] = "Feb";
+    monthKey[3] = "Mar";
+    monthKey[4] = "Apr";
+    monthKey[5] = "May";
+    monthKey[6] = "Jun";
+    monthKey[7] = "Jul";
+    monthKey[8] = "Aug";
+    monthKey[9] = "Sept";
+    monthKey[10] = "Oct";
+    monthKey[11] = "Nov";
+    monthKey[12] = "Dec";
 
     let currentMonth = monthKey[month]
 
