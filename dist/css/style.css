@@ -360,3 +360,47 @@ a{
   min-height: 700px;
   font-family: 'Lato', sans-serif;
 }
+
+
+
+/* Mobile Responsiveness */
+@media(max-width: 767px) {
+  .search{
+    height: 10vh;
+  }
+  .search__btn{
+    height:10vh;
+  }
+
+  .btn{
+    padding: 1.3rem 1rem;
+    transition: none;
+  }
+  .btn:hover{
+    transform: none;
+  }
+  .search__icon{
+    display: none;
+  }
+  .btn > :first-child{
+    margin-right: 0rem;
+  }
+  .search__field{
+    width: 10rem;
+    font-size: 1.0rem;
+  }
+  .btn{
+    font-size: 1.0rem;
+  }
+  .content{
+    flex-direction: column;
+    max-height: 140vh;
+  }
+  .results__data{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .selection{
+    width: 100vw;
+  }
+}
