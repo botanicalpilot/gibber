@@ -25,10 +25,23 @@
                             </button>
                         </form>
                     </div>
+                    <div class="mobileHeaderBtns">
+                        <button class="btn tab__btn" onclick="tabSelection('results')">
+                            <span>Search Results</span>
+                        </button>
+                        <button class="btn tab__btn" onclick="tabSelection('selection')">
+                            <span>Crop Selection</span>
+                        </button>
+                        <button class="btn tab__btn" onclick="tabSelection('calendarContainer')">
+                            <span>Calendar</span>
+                        </button>
+
+
+                    </div class>
                 </header>
         
                 <div class="content">
-                    <div class="results">
+                    <div id="results" class="results tab">
                         <div class=results__container>
                         <ul class="results__list">
                                 <!-- <li>
@@ -65,7 +78,7 @@
                         </div>
                     </div>
             
-                    <div class="selection">
+                    <div id="selection" class="selection tab">
                         <!-- crops__selected -->
                         <h2 id="heading-2">this seasons crops</h2><br>
                             <div class="crop__list">
@@ -90,7 +103,7 @@
                     </div>
                     
                 </div>
-                <div class="calendarContainer">
+                <div id="calendarContainer" class="calendarContainer tab">
                     <div id="calendarHeader">
                         <div id="calendarMonth"></div>
                          <!--<span id="menu-navi"> 
@@ -112,5 +125,18 @@
                     </div>
                     <div id="calendar"></div>
                 </div>
+
+            <!-- tab function for mobile users -->
+            <script>
+                const tabSelection = tabSelected => {
+                    console.log("hello from tabSelection")
+                    let i, x, tabLinks; 
+                    x=document.getElementsByClassName("tab");
+                    for (i=0; i< x.length; i++){
+                        x[i].style.display = 'none';
+                    }
+                    document.getElementById(tabSelected).style.display="block";
+                }
+            </script>
         </body>
 </html>

@@ -37,6 +37,7 @@ window.onload = async () => {
         }
 }
 
+
 /*
 Add date prototype to increment a day went converting dates from API and sending to calendar
 */

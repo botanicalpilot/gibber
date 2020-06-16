@@ -66,6 +66,9 @@ a{
   margin: 20px;
 }
 
+.mobileHeaderBtns {
+  display: none;
+}
 
 /* start button styling */
 .btn, .btn-small, .btn-small:link, .btn-small:visited {
@@ -365,9 +368,18 @@ a{
 
 /* Mobile Responsiveness */
 @media(max-width: 767px) {
+  .header{
+    background-image: none;
+  }
   .search{
     height: 10vh;
   }
+
+  .mobileHeaderBtns {
+    display: flex;
+    flex-direction: row;
+  }
+  
   .search__btn{
     height:10vh;
   }
@@ -392,9 +404,16 @@ a{
   .btn{
     font-size: 1.0rem;
   }
+
+  .selection .calendarContainer {
+    display: none;
+  }
   .content{
     flex-direction: column;
-    max-height: 140vh;
+    min-height: 0vh;
+  }
+  .results{
+    min-height: 100vh;
   }
   .results__data{
     flex-direction: row;
@@ -402,5 +421,11 @@ a{
   }
   .selection{
     width: 100vw;
+    overflow-y: hidden;
+    min-height: 50vh;
+    height: auto;
+  }
+  #calendarHeader{
+    background-image: none;
   }
 }
