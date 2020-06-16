@@ -68,6 +68,11 @@ a{
 
 .mobileHeaderBtns {
   display: none;
+  padding-bottom: 30px;
+  justify-content: space-around;
+  width: 100vw;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+   filter: drop-shadow(5px 5px 5px #222)
 }
 
 /* start button styling */
@@ -404,16 +409,19 @@ a{
   .btn{
     font-size: 1.0rem;
   }
-
+  .tab__btn{
+    background-image: linear-gradient(to right bottom, #518C7A,#1F4036);
+  }
   .selection .calendarContainer {
     display: none;
   }
   .content{
     flex-direction: column;
     min-height: 0vh;
+    overflow: hidden;
   }
   .results{
-    min-height: 100vh;
+    min-height: 110vh;
   }
   .results__data{
     flex-direction: row;
@@ -425,7 +433,24 @@ a{
     min-height: 50vh;
     height: auto;
   }
+
+  .crop{
+    width: auto;
+    overflow-x: hidden;
+  }
+
+  .cropButtons{
+    visibility: visible;
+    opacity: 1;
+  }
   #calendarHeader{
     background-image: none;
+  }
+}
+
+@media(max-height: 793px){
+  .results__data{
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 }
