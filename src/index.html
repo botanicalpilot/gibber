@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Lato&family=Miniver&display=swap" rel="stylesheet"> 
     <title>Gibber // Gardening Help in 8b</title>
-    <body>
+    <body onload="tabSelection('results')" onresize="tabSelection('results')">
                 <header class="header">
                     <div class="headerTitle">
                         <img id="headerLogo" src="img/shovelLogo.png" alt="Logo" class="header__logo">
@@ -129,14 +129,22 @@
             <!-- tab function for mobile users -->
             <script>
                 const tabSelection = tabSelected => {
-                    console.log("hello from tabSelection")
-                    let i, x, tabLinks; 
+                    let i, x; 
                     x=document.getElementsByClassName("tab");
-                    for (i=0; i< x.length; i++){
-                        x[i].style.display = 'none';
+                    if(window.innerWidth <= 767){
+                        console.log("hello from if")
+                        for (i=0; i< x.length; i++){
+                            x[i].style.display = 'none';
+                        }
+                    } else{
+                        console.log("hello from else")
+                        for (i=0; i< x.length; i++){
+                            x[i].style.display = 'block';
+                        }
                     }
                     document.getElementById(tabSelected).style.display="block";
                 }
+                window.onload = tabSelection('results')
             </script>
         </body>
 </html>
