@@ -12,7 +12,6 @@ export default class Crop {
         try {
             const res = await axios.get(`https://thallus-api.herokuapp.com/api/crops/${this.id}`);
             this.common = res.data.common_name;
-            console.log(this.photo_ref);
             this.scientific = res.data.scientific_name;
             this.sowAll = res.data.sow_all_season;
             this.indoorStart = res.data.sow_indoor_start;
