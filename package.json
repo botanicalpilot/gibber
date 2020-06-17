@@ -44,5 +44,8 @@
     "tui-calendar": "^1.12.13",
     "uniqid": "^5.2.0",
     "websocket-extensions": "^0.1.4"
+  },
+  "engines": {
+    "node": "10.19.0"
   }
 }
