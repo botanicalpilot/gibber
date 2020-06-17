@@ -174,7 +174,7 @@ const renderCrop = crop => {
                         </button>
                         </div>
                         <div class="${startClass}">
-                            <p>Plants Starts <br>${startBegin} - <br>${startEnd}</p>
+                            <p>Plant starts <br>${startBegin} - <br>${startEnd}</p>
                             <button class="btn-inline">
                             <svg class="startAdd">
                                 <use href="img/icons.svg#icon-circle-with-plus"></use>
