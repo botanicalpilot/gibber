@@ -98,8 +98,8 @@ const renderCrop = crop => {
     // let users know planting intervals. 
     let cropBoolean = ''
     if(crop.sow_all_season && crop.start_all_season === true){
-       cropBoolean =  `<div class="results_boolean">Plant Crop in intervals all season from either starts or seeds.</div>` 
-    } else if(crop.sow_all_season === true && crop.start_all_season === false){ cropBoolean = `<div class="results_boolean">Crop may be sown in intervals throughout the growing season.</div>`
+       cropBoolean =  `<div class="results__boolean">Plant Crop in intervals all season from either starts or seeds.</div>` 
+    } else if(crop.sow_all_season === true && crop.start_all_season === false){ cropBoolean = `<div class="results__boolean">Crop may be sown in intervals throughout the growing season.</div>`
     } else {
         cropBoolean = `<div class="results__boolean">Crops may only be planted between the dates below.</div>`
     }
