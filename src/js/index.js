@@ -70,7 +70,7 @@ const controlSearch = async () => {
 
 const controlCrop = async () => {
     const id = window.location.hash.replace('#', '')
-
+    
     if(id){
         state.crop = new Crop(id);
         try {
@@ -137,8 +137,6 @@ const controlSelect = growingChoice => {
             const sowItem = state.sowSelection.addItem(state.crop.id, state.crop.common, state.crop.scientific, state.crop.sowStart, state.crop.sowEnd, state.crop.photo_ref, '#518C7B');
             selectView.renderItem(growingChoice, sowItem); 
             calendar.createSchedules([sowItem]);
-            console.log(`splitdate with date ${new Date('2019-08-05')}`)
-            console.log(`splitdate ${new Date(dateFormat(state.crop.sowStart))}`)
             
             var generateCalendarButtons = addToCalendar({
                 options: {
@@ -261,6 +259,9 @@ var calendar = new Calendar('#calendar', {
     // template: MONTHLY_CUSTOM_THEME
     
 });
+
+
+
 
 
 
