@@ -426,13 +426,17 @@ a{
   }
   .results__data{
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: start;
   }
   .selection{
     width: 100vw;
     overflow-y: hidden;
     min-height: 50vh;
     height: auto;
+  }
+
+  #sn_style{
+    margin-left: 20px;
   }
 
   .crop{
