@@ -1,4 +1,134 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=Oswald&family=Lato&family=Miniver&display=swap" rel="stylesheet"><title>Gibber // Gardening Help in 8b</title><body onload="tabSelection('results')" onresize="tabSelection('results')"><header class="header"><div class="headerTitle"><img id="headerLogo" src="img/shovelLogo.png" alt="Logo" class="header__logo"><h1>gibber</h1></div><div class="headerForm"><form class="search"><input class="search__field" placeholder="Search by common or scientific name"> <button class="btn search__btn"><svg class="search__icon"><use href="img/icons.svg#icon-magnifying-glass"></use></svg> <span>Search</span></button></form></div><div class="mobileHeaderBtns"><button class="btn tab__btn" onclick="tabSelection('results')"><span>Search Results</span></button> <button class="btn tab__btn" onclick="tabSelection('selection')"><span>Crop Selection</span></button> <button class="btn tab__btn" onclick="tabSelection('calendarContainer')"><span>Calendar</span></button></div></header><div class="content"><div id="results" class="results tab"><div class="results__container"><ul class="results__list"></ul></div><div class="results__pages"></div></div><div id="selection" class="selection tab"><h2 id="heading-2">this seasons crops</h2><br><div class="crop__list"><ul class="crop_selection"><li class="crop__item"></li></ul></div></div></div><div id="calendarContainer" class="calendarContainer tab"><div id="calendarHeader"><div id="calendarMonth"></div></div><div id="calendar"></div></div><script>const tabSelection = tabSelected => {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Lato&family=Miniver&display=swap" rel="stylesheet"> 
+    <title>Gibber // Gardening Help in 8b</title>
+    <body onload="tabSelection('results')" onresize="tabSelection('results')">
+                <header class="header">
+                    <div class="headerTitle">
+                        <img id="headerLogo" src="img/shovelLogo.png" alt="Logo" class="header__logo">
+                        <h1>gibber</h1>
+                    </div>
+                    <div class="headerForm">
+                        <form class="search">
+                            <input type="text" class="search__field" placeholder="Search by common or scientific name">
+                            <button class="btn search__btn">
+                                <svg class="search__icon">
+                                    <use href="img/icons.svg#icon-magnifying-glass"></use>
+                                </svg>
+                                <span>Search</span>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="mobileHeaderBtns">
+                        <button class="btn tab__btn" onclick="tabSelection('results')">
+                            <span>Search Results</span>
+                        </button>
+                        <button class="btn tab__btn" onclick="tabSelection('selection')">
+                            <span>Crop Selection</span>
+                        </button>
+                        <button class="btn tab__btn" onclick="tabSelection('calendarContainer')">
+                            <span>Calendar</span>
+                        </button>
+
+
+                    </div class>
+                </header>
+        
+                <div class="content">
+                    <div id="results" class="results tab">
+                        <div class=results__container>
+                        <ul class="results__list">
+                                <!-- <li>
+                                        <a class="results__link" href="#${crop.id}">
+                                            <div class="results__data">
+                                                <div class="resultsTitle">
+                                                    <div id="cn_style">${crop.common_name}</div><br>
+                                                    <div id="sn_style">${crop.scientific_name}</div>
+                                                </div>
+                                                <div class = "resultsButtons">
+                                                    <button class="indoorAdd"> Indoor add</button>
+                                                    <button class="sowAdd">Sow add</button>
+                                                    <button class="startAdd"> Start add</button>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li> -->
+                        </ul>
+                    </div>
+            
+                        <div class="results__pages">
+                            <!-- <button class="btn-inline results__btn--prev">
+                                <svg class="search__icon">
+                                    <use href="img/icons.svg#icon-triangle-left"></use>
+                                </svg>
+                                <span>Page 1</span>
+                            </button>
+                            <button class="btn-inline results__btn--next">
+                                <span>Page 3</span>
+                                <svg class="search__icon">
+                                    <use href="img/icons.svg#icon-triangle-right"></use>
+                                </svg>
+                            </button> -->
+                        </div>
+                    </div>
+            
+                    <div id="selection" class="selection tab">
+                        <!-- crops__selected -->
+                        <h2 id="heading-2">this seasons crops</h2><br>
+                            <div class="crop__list">
+                            <ul class="crop_selection">
+                                <li class="crop__item">
+                                    <!-- <div class="crop">
+                                        <div class="cropTitle">Crop</div>
+                                        <div class="growingChoice">growing choice</div>
+                                        <div class="cropDates">start - end
+                                        </div>
+                                        <div class="cropButtons">
+                                            <button class="crop__delete btn-tiny">
+                                                <svg>
+                                                    <use href="img/icons.svg#icon-circle-with-cross"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li> -->
+                            </ul>
+                            </div>
+                    </div>
+                    
+                </div>
+                <div id="calendarContainer" class="calendarContainer tab">
+                    <div id="calendarHeader">
+                        <div id="calendarMonth"></div>
+                         <!--<span id="menu-navi"> 
+                             <button type="button" class="btn btn-default btn-tiny move-today" data-action="move-today">Today</button>           
+                            <button type="button" class="moveMonthButton btn-inline move-day" data-action="move-prev">
+                                <svg>
+                                    <use href="img/icons.svg#icon-triangle-left" data-action="move-prev"></use>
+                                </svg>
+                            </button>
+                            
+                            <button type="button" class="moveMonthButton btn-inline move-day" data-action="move-next">
+                                    <svg>
+                                        <use href="img/icons.svg#icon-triangle-right" data-action="move-next"></use>
+                                    </svg>
+                            </button>
+                        </span>
+                    <span id="renderRange" class="render-range"></span> -->
+                    
+                    </div>
+                    <div id="calendar"></div>
+                </div>
+
+            <!-- tab function for mobile users -->
+            <script>
+                const tabSelection = tabSelected => {
                     let i, x; 
                     x=document.getElementsByClassName("tab");
                     if(window.innerWidth <= 767){
@@ -12,4 +142,7 @@
                     }
                     document.getElementById(tabSelected).style.display="block";
                 }
-                window.onload = tabSelection('results')</script><script src="js/bundle.js"></script></body></head></html>
+                window.onload = tabSelection('results')
+            </script>
+        <script src="js/bundle.js"></script></body>
+</html>
