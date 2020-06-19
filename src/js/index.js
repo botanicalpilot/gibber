@@ -256,7 +256,8 @@ elements.calendarMonth.insertAdjacentHTML('afterbegin', currentMonth)
 var calendar = new Calendar('#calendar', {
     defaultView: 'month',
     taskView: true,
-    // template: MONTHLY_CUSTOM_THEME
+    useCreationPopup: true,
+    useDetailPopup: true,
     
 });
 
