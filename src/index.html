@@ -144,6 +144,20 @@
                     document.getElementById(tabSelected).style.display="block";
                 }
                 window.onload = tabSelection('results')
+
+                const closeCalendarButton = () => {
+                    return document.querySelector('.add-to-calendar-checkbox').checked = false;
+                }
+
+                const closeCalenderOnMouseDown = (checkbox) => {
+                    //console.log('check');
+                    var closeCalendar = function() { 
+                      //console.log('click');
+                      setTimeout(function() { checkbox.checked=false; }, 750);
+                      document.removeEventListener("mousedown",closeCalendar);
+                    };
+                    document.addEventListener("mousedown",closeCalendar);
+                  }
             </script>
         </body>
 </html>
