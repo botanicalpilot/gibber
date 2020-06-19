@@ -11,7 +11,7 @@ export const renderItem = (growingChoice, crop) => {
                     <img class="cropImage" src="https://thallus-api.herokuapp.com/${crop.image}" alt="${crop.title}">
                 </figure>
                 <div class="cropTitle">${crop.title}</div>
-                <div class="growingChoice">${growingChoice}</div>
+                <div class="growingChoice">Growing Method: ${growingChoice}</div>
                 <div class="cropButtons">
                     <div class=".new-cal" data-calid="${crop.id}"></div>
                 </div>

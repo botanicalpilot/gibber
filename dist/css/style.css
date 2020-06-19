@@ -348,6 +348,10 @@ a{
   flex: 1;
   align-content: center;
 } 
+
+.cropTitle{
+  text-transform: capitalize;
+}
 .cropDates{
   flex: 3;
 }
