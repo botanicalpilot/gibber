@@ -453,6 +453,10 @@ a{
     height: auto;
   }
 
+  figure{
+    margin: 10px;
+  }
+
   #sn_style{
     margin-left: 20px;
   }
@@ -462,6 +466,15 @@ a{
     overflow-x: hidden;
   }
 
+  .crop__item{
+    overflow-y: auto;
+  }
+
+  .cropImage{
+    height: 50px;
+    width: 50px;
+  }
+
   .cropButtons{
     visibility: visible;
     opacity: 1;
@@ -469,6 +482,7 @@ a{
   #calendarHeader{
     background-image: none;
   }
+
 }
 
 @media(max-height: 793px){
