@@ -112,7 +112,7 @@ const controlSelect = growingChoice => {
             selectView.renderItem(growingChoice, indoorItem);
             calendar.createSchedules([indoorItem]);
 
-            var generateCalendarButtons = addToCalendar({
+            const generateCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
                     id: state.crop.id                               // If you don't pass an id, one will be generated for you.
@@ -128,18 +128,34 @@ const controlSelect = growingChoice => {
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
             });
+            const mobileCalendarButtons = addToCalendar({
+                options: {
+                    class: 'my-class',
+                    id: `mobile-${state.crop.id}`                               // If you don't pass an id, one will be generated for you.
+                },
+                data: {
+                    title: `Start ${state.crop.common} from seed indoors`,     // Event title
+                    start: new Date(dateFormat(state.crop.indoorStart)),   // Event start date
+                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
+                    end: new Date(dateFormat(state.crop.indoorEnd)),     // If an end time is set, this will take precedence over duration
+                    // duration: 120,                            // Event duration (IN MINUTES)
+                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    address: 'Portland, OR, USA',
+                    description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
+                }
+            });
             document.querySelector(`[data-calid="${indoorItem.id}"]`).appendChild(generateCalendarButtons);
-            document.querySelector(`[mobile-calid="${indoorItem.id}"]`).appendChild(generateCalendarButtons);
+            document.querySelector(`[mobile-calid="${indoorItem.id}"]`).appendChild(mobileCalendarButtons);
     } else if(growingChoice === 'sow'){
         // create a new selection if there isn't any. 
         if (!state.sowSelection) state.sowSelection = new Select();
 
         // add crop to the selection
-            const sowItem = state.sowSelection.addItem(state.crop.id, state.crop.common, state.crop.scientific,formatDate(state.crop.sowStart),formatDate(state.crop.sowEnd), state.crop.photo_ref, '#518C7B');
+            const sowItem = state.sowSelection.addItem(state.crop.id, state.crop.common, state.crop.scientific,dateFormat(state.crop.sowStart),dateFormat(state.crop.sowEnd), state.crop.photo_ref, '#518C7B');
             selectView.renderItem(growingChoice, sowItem); 
             calendar.createSchedules([sowItem]);
             
-            var generateCalendarButtons = addToCalendar({
+            const generateCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
                     id: state.crop.id,                              // If you don't pass an id, one will be generated for you.
@@ -155,8 +171,24 @@ const controlSelect = growingChoice => {
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
             });
+            const mobileCalendarButtons = addToCalendar({
+                options: {
+                    class: 'my-class',
+                    id: `mobile-${state.crop.id}`                               // If you don't pass an id, one will be generated for you.
+                },
+                data: {
+                    title: `Start ${state.crop.common} from seed indoors`,     // Event title
+                    start: new Date(dateFormat(state.crop.sowStart)),   // Event start date
+                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
+                    end: new Date(dateFormat(state.crop.sowEnd)),     // If an end time is set, this will take precedence over duratin
+                    // duration: 120,                            // Event duration (IN MINUTES)
+                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    address: 'Portland, OR, USA',
+                    description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
+                }
+            });
             document.querySelector(`[data-calid=${sowItem.id}]`).appendChild(generateCalendarButtons);
-            document.querySelector(`[mobile-calid=${sowItem.id}]`).appendChild(generateCalendarButtons);
+            document.querySelector(`[mobile-calid=${sowItem.id}]`).appendChild(mobileCalendarButtons);
 
     } else if(growingChoice === 'start'){
         // create a new selection if there isn't any. 
@@ -168,7 +200,7 @@ const controlSelect = growingChoice => {
             selectView.renderItem(growingChoice, startItem);
             calendar.createSchedules([startItem]);
 
-            var generateCalendarButtons = addToCalendar({
+            const generateCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
                     id: state.crop.id                               // If you don't pass an id, one will be generated for you.
@@ -184,8 +216,24 @@ const controlSelect = growingChoice => {
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
             });
+            const mobileCalendarButtons = addToCalendar({
+                options: {
+                    class: 'my-class',
+                    id: `mobile-${state.crop.id}`                              // If you don't pass an id, one will be generated for you.
+                },
+                data: {
+                    title: `Plant ${state.crop.common} starts`,     // Event title
+                    start: new Date(dateFormat(state.crop.startBegin)),   // Event start date
+                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
+                    end: new Date(dateFormat(state.crop.startEnd)),     // If an end time is set, this will take precedence over duration
+                    // duration: 120,                            // Event duration (IN MINUTES)
+                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    address: 'Portland, OR, USA',
+                    description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
+                }
+            });
             document.querySelector(`[data-calid=${startItem.id}]`).appendChild(generateCalendarButtons);
-            document.querySelector(`[mobile-calid=${startItem.id}]`).appendChild(generateCalendarButtons);
+            document.querySelector(`[mobile-calid=${startItem.id}]`).appendChild(mobileCalendarButtons);
     }
 }
 
@@ -220,7 +268,7 @@ elements.searchForm.addEventListener('submit', e => {
 // Handle button clicks to select crops
 elements.searchRes.addEventListener('click', e => {
     let addButton = e.target.closest('.indoorAdd')
-    let sowButton  = e.target.closest('.sowAdd')
+    let sowButton = e.target.closest('.sowAdd')
     let startButton = e.target.closest('.startAdd')
     if(addButton){
         console.log(state.crop)
