@@ -305,10 +305,7 @@ let currentMonth = month[dateMonth.getMonth()];
 elements.calendarMonth.insertAdjacentHTML('afterbegin', currentMonth)
 var calendar = new Calendar('#calendar', {
     defaultView: 'month',
-    taskView: true,
-    useCreationPopup: true,
-    useDetailPopup: true,
-    
+    taskView: true,    
 });
 
 
