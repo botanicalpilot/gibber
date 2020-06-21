@@ -34,9 +34,9 @@ export const renderItem = (growingChoice, crop) => {
                     <h1 class="cropTitle" id="modalTitle">${crop.title}</h1>
                     <div class="growingChoice">Growing Method: ${growingChoice}</div>
                     <div class="mobileButtonContainer">
-                        <button class="cropButtons btn-inline">
+                        <div class="cropButtons">
                             <div class=".new-cal" mobile-calid="${crop.id}"></div>
-                        </button>
+                        </div>
                         <div class="cropButtons">
                             <button class="crop__delete btn-inline">Delete Crop</button>
                         </div>

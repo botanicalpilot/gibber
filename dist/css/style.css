@@ -325,6 +325,12 @@ a{
   width: 40vw;
 }
 
+.add-to-calendar-label{
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 1.2rem;
+}
+
 .cropMobile{
   display: none;
 }
@@ -514,12 +520,16 @@ a{
   }
 
   #modalTitle{
-    padding-top: 5px;
+    margin-top: 13px;
   }
-
 
   .mobileButtonContainer{
     display: flex;
+  }
+
+  .crop__delete{
+    color: black;
+    margin-top: 14px;
   }
   .crop{
     display: none;

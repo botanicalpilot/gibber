@@ -1,4 +1,4 @@
-import {addToCalendar} from '../../../node_modules/js-add-to-calendar-buttons';
+import {addToCalendar} from '../../../node_modules/add-to-calendar-buttons';
 import { elements } from './base';
 
 
