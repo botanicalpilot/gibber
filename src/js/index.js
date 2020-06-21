@@ -308,6 +308,13 @@ var calendar = new Calendar('#calendar', {
     taskView: true,    
 });
 
+elements.dayCalendarToggle.addEventListener('click', () => {
+    calendar.changeView('day', true)
+})
+elements.monthCalendarToggle.addEventListener('click', () => {
+    calendar.changeView('month', true)
+})
+
 
 
 

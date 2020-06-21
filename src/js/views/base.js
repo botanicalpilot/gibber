@@ -15,6 +15,8 @@ export const elements = {
     indoorAddButton: document.querySelector('.indoorAdd'),
     sowAddButton: document.querySelector('.sowAdd'),
     startAddButton: document.querySelector('.startAdd'),
+    dayCalendarToggle: document.querySelector('.dayToggle'),
+    monthCalendarToggle: document.querySelector('.monthToggle') 
 }
 
 
