@@ -31,9 +31,7 @@ export const renderItem = (growingChoice, crop) => {
             </button>
             <div class="cropModal" id="modal-${crop.id}">
                 <div class="modalContent">
-                    <span class="close">&times;</span><br>
-                    <h1 class="cropTitle">${crop.title}
-                    </h1>
+                    <h1 class="cropTitle" id="modalTitle">${crop.title}</h1>
                     <div class="growingChoice">Growing Method: ${growingChoice}</div>
                     <div class="mobileButtonContainer">
                         <button class="cropButtons btn-inline">

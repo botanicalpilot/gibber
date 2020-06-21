@@ -497,17 +497,14 @@ a{
     margin: auto;
     margin-top:40vh;
     width: 75vw; 
-    height: 25vh;
+    height: 20vh;
     text-align: center;
   }
 
-  .close{
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    padding-right: 5px;
+  #modalTitle{
+    padding-top: 5px;
   }
+
 
   .mobileButtonContainer{
     display: flex;
