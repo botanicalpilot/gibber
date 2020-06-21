@@ -16,7 +16,8 @@ export const elements = {
     sowAddButton: document.querySelector('.sowAdd'),
     startAddButton: document.querySelector('.startAdd'),
     dayCalendarToggle: document.querySelector('.dayToggle'),
-    monthCalendarToggle: document.querySelector('.monthToggle') 
+    monthCalendarToggle: document.querySelector('.monthToggle'),
+    calendarButtonLabel: document.querySelector('.add-to-calendar-label') 
 }
 
 

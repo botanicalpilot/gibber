@@ -410,9 +410,10 @@ a{
 
 
 /* Mobile Responsiveness */
-@media(max-width: 767px) {
+@media(max-width: 768px) {
   .header{
     background-image: none;
+    height: 55vh;
   }
   .search{
     height: 10vh;
@@ -459,7 +460,7 @@ a{
     overflow: hidden;
   }
   .results{
-    min-height: 110vh;
+    min-height: 115vh;
   }
   .results__data{
     flex-direction: row;

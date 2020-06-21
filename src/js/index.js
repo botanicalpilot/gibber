@@ -234,6 +234,7 @@ const controlSelect = growingChoice => {
             });
             document.querySelector(`[data-calid=${startItem.id}]`).appendChild(generateCalendarButtons);
             document.querySelector(`[mobile-calid=${startItem.id}]`).appendChild(mobileCalendarButtons);
+            elements.calendarButtonLabel.innerHTML.replace('Add to calendar', 'Export Crop')
     }
 }
 
@@ -314,6 +315,8 @@ elements.dayCalendarToggle.addEventListener('click', () => {
 elements.monthCalendarToggle.addEventListener('click', () => {
     calendar.changeView('month', true)
 })
+
+elements.calendarButtonLabel.innerHTML = elements.calendarButtonLabel.innerHTML.replace('Add to calendar', 'Export Crop')
 
 
 
