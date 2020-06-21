@@ -129,6 +129,7 @@ const controlSelect = growingChoice => {
                 }
             });
             document.querySelector(`[data-calid="${indoorItem.id}"]`).appendChild(generateCalendarButtons);
+            document.querySelector(`[mobile-calid="${indoorItem.id}"]`).appendChild(generateCalendarButtons);
     } else if(growingChoice === 'sow'){
         // create a new selection if there isn't any. 
         if (!state.sowSelection) state.sowSelection = new Select();
@@ -155,7 +156,7 @@ const controlSelect = growingChoice => {
                 }
             });
             document.querySelector(`[data-calid=${sowItem.id}]`).appendChild(generateCalendarButtons);
-            
+            document.querySelector(`[mobile-calid=${sowItem.id}]`).appendChild(generateCalendarButtons);
 
     } else if(growingChoice === 'start'){
         // create a new selection if there isn't any. 
@@ -184,6 +185,7 @@ const controlSelect = growingChoice => {
                 }
             });
             document.querySelector(`[data-calid=${startItem.id}]`).appendChild(generateCalendarButtons);
+            document.querySelector(`[mobile-calid=${startItem.id}]`).appendChild(generateCalendarButtons);
     }
 }
 

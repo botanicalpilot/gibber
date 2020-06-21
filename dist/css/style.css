@@ -325,6 +325,14 @@ a{
   width: 40vw;
 }
 
+.cropMobile{
+  display: none;
+}
+
+.cropModal{
+  display: none;
+}
+
 .crop:hover .cropButtons {
   opacity: 1;
   visibility: visible;
@@ -462,10 +470,53 @@ a{
     align-items: center;
   }
 
-  .crop{
-    width: auto;
-    overflow-x: hidden;
+  .cropMobile{
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 75vw;
   }
+
+  .cropModal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .modalContent{
+    background-color: #fefefe;
+    margin: auto;
+    margin-top:40vh;
+    width: 75vw; 
+    height: 25vh;
+    text-align: center;
+  }
+
+  .close{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding-right: 5px;
+  }
+
+  .mobileButtonContainer{
+    display: flex;
+  }
+  .crop{
+    display: none;
+  }
+
+
 
   .crop__item{
     overflow-y: auto;
