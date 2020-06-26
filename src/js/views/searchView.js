@@ -13,15 +13,6 @@ export const clearResults = () => {
     elements.searchResPages.innerHTML = '';
 };
 
-// export const highlightSelected  = id => {
-//     const resultsArr = Array.from(document.querySelectorAll('.results__link'));
-//     resultsArr.forEach(el => {
-//         el.classList.remove('results__link--active');
-//     });
-//     document.querySelector(`.results__link[href*=${id}"]`).classList.add('results__link--active');
-// };
-
-
 export const buildAccordion = id => {
     // const accordionBtn = document.getElementsByClassName('results__data');
     let i;
@@ -56,15 +47,15 @@ export const clearAccordion = () => {
     }
 }
 
+// Reformat dates
 export const splitDate = rawDate => {
     let current = new Date()
     let year  = current.getFullYear()
     // 
     return rawDate.replace('T00:00:00.000Z', '').replace("2020", year).split('-').reverse().join('-')
 }
-
+// format month
 const monthFormat = numDate => {
-
     let m1 = numDate.charAt(3)
     let m2 = numDate.charAt(4)
     let month;

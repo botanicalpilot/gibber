@@ -462,7 +462,7 @@ a{
   }
   .content{
     flex-direction: column;
-    min-height: 0vh;
+    max-height: none;
     overflow: hidden;
   }
   .results{

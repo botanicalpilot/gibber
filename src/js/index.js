@@ -81,6 +81,7 @@ const controlCrop = async () => {
     }
 }
 
+// pagination function for results from search controller
 elements.searchResPages.addEventListener('click', e => {
     const btn  = e.target.closest('.btn-inline')
 
@@ -115,15 +116,12 @@ const controlSelect = growingChoice => {
             const generateCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
-                    id: state.crop.id                               // If you don't pass an id, one will be generated for you.
+                    id: state.crop.id                       
                 },
                 data: {
-                    title: `Start ${state.crop.common} from seed indoors`,     // Event title
-                    start: new Date(dateFormat(state.crop.indoorStart)),   // Event start date
-                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
-                    end: new Date(dateFormat(state.crop.indoorEnd)),     // If an end time is set, this will take precedence over duration
-                    // duration: 120,                            // Event duration (IN MINUTES)
-                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    title: `Start ${state.crop.common} from seed indoors`,     
+                    start: new Date(dateFormat(state.crop.indoorStart)),   			
+                    end: new Date(dateFormat(state.crop.indoorEnd)),    													
                     address: 'Portland, OR, USA',
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
@@ -131,15 +129,12 @@ const controlSelect = growingChoice => {
             const mobileCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
-                    id: `mobile-${state.crop.id}`                               // If you don't pass an id, one will be generated for you.
+                    id: `mobile-${state.crop.id}`                            
                 },
                 data: {
-                    title: `Start ${state.crop.common} from seed indoors`,     // Event title
-                    start: new Date(dateFormat(state.crop.indoorStart)),   // Event start date
-                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
-                    end: new Date(dateFormat(state.crop.indoorEnd)),     // If an end time is set, this will take precedence over duration
-                    // duration: 120,                            // Event duration (IN MINUTES)
-                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    title: `Start ${state.crop.common} from seed indoors`,     
+                    start: new Date(dateFormat(state.crop.indoorStart)),  
+                    end: new Date(dateFormat(state.crop.indoorEnd)),     
                     address: 'Portland, OR, USA',
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
@@ -158,15 +153,12 @@ const controlSelect = growingChoice => {
             const generateCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
-                    id: state.crop.id,                              // If you don't pass an id, one will be generated for you.
+                    id: state.crop.id,                              
                 },
                 data: {
-                    title: `Start ${state.crop.common} from seed indoors`,     // Event title
-                    start: new Date(dateFormat(state.crop.sowStart)),   // Event start date
-                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
-                    end: new Date(dateFormat(state.crop.sowEnd)),     // If an end time is set, this will take precedence over duratin
-                    // duration: 120,                            // Event duration (IN MINUTES)
-                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    title: `Start ${state.crop.common} from seed indoors`,     
+                    start: new Date(dateFormat(state.crop.sowStart)),  
+                    end: new Date(dateFormat(state.crop.sowEnd)),     
                     address: 'Portland, OR, USA',
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
@@ -174,15 +166,12 @@ const controlSelect = growingChoice => {
             const mobileCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
-                    id: `mobile-${state.crop.id}`                               // If you don't pass an id, one will be generated for you.
+                    id: `mobile-${state.crop.id}`                               
                 },
                 data: {
-                    title: `Start ${state.crop.common} from seed indoors`,     // Event title
-                    start: new Date(dateFormat(state.crop.sowStart)),   // Event start date
-                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
-                    end: new Date(dateFormat(state.crop.sowEnd)),     // If an end time is set, this will take precedence over duratin
-                    // duration: 120,                            // Event duration (IN MINUTES)
-                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    title: `Start ${state.crop.common} from seed indoors`,   
+                    start: new Date(dateFormat(state.crop.sowStart)),   
+                    end: new Date(dateFormat(state.crop.sowEnd)),     
                     address: 'Portland, OR, USA',
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
@@ -203,15 +192,12 @@ const controlSelect = growingChoice => {
             const generateCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
-                    id: state.crop.id                               // If you don't pass an id, one will be generated for you.
+                    id: state.crop.id                               
                 },
                 data: {
-                    title: `Plant ${state.crop.common} starts`,     // Event title
-                    start: new Date(dateFormat(state.crop.startBegin)),   // Event start date
-                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
-                    end: new Date(dateFormat(state.crop.startEnd)),     // If an end time is set, this will take precedence over duration
-                    // duration: 120,                            // Event duration (IN MINUTES)
-                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    title: `Plant ${state.crop.common} starts`,     
+                    start: new Date(dateFormat(state.crop.startBegin)),   
+                    end: new Date(dateFormat(state.crop.startEnd)),     
                     address: 'Portland, OR, USA',
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
@@ -219,15 +205,12 @@ const controlSelect = growingChoice => {
             const mobileCalendarButtons = addToCalendar({
                 options: {
                     class: 'my-class',
-                    id: `mobile-${state.crop.id}`                              // If you don't pass an id, one will be generated for you.
+                    id: `mobile-${state.crop.id}`                              
                 },
                 data: {
-                    title: `Plant ${state.crop.common} starts`,     // Event title
-                    start: new Date(dateFormat(state.crop.startBegin)),   // Event start date
-                    // timezone: America/Los_Angeles,					// converts the time to the IANA timezone 
-                    end: new Date(dateFormat(state.crop.startEnd)),     // If an end time is set, this will take precedence over duration
-                    // duration: 120,                            // Event duration (IN MINUTES)
-                    // allday: true,													// Override end time, duration and timezone, triggers 'all day'
+                    title: `Plant ${state.crop.common} starts`,     
+                    start: new Date(dateFormat(state.crop.startBegin)),   
+                    end: new Date(dateFormat(state.crop.startEnd)),     
                     address: 'Portland, OR, USA',
                     description: `Sow ${state.crop.common} (${state.crop.scientific}) indoors before planting out starts later in the growing season`
                 }
@@ -287,6 +270,8 @@ elements.searchRes.addEventListener('click', e => {
 /*
 Calendar Controller
 */
+
+// Display month name
 let dateMonth = new Date();
 const month = new Array();
 month[0] = "January";
@@ -309,6 +294,7 @@ var calendar = new Calendar('#calendar', {
     taskView: true,    
 });
 
+// Change Calendar View
 elements.dayCalendarToggle.addEventListener('click', () => {
     calendar.changeView('day', true)
 })
